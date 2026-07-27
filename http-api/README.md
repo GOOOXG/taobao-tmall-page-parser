@@ -1,6 +1,6 @@
 # 淘宝/天猫商品解析 HTTP API
 
-本地 Node 服务调用 `../mjs-parser/taobao-tmall-page-parser.mjs`，复用已登录 Chrome 获取统一商品 JSON。
+本地 Node 服务调用本目录内独立的 `taobao-tmall-page-parser.mjs`，复用已登录 Chrome 获取统一商品 JSON。
 
 要求 Node.js 20 或更高版本。
 

@@ -4,7 +4,7 @@
 
 ```text
 mjs-parser/   默认 MJS 页面解析库
-http-api/     调用 MJS 的本地 Node HTTP API
+http-api/     使用独立 MJS 的本地 Node HTTP API
 ```
 
 ## 默认解析库
