@@ -1,5 +1,6 @@
 node_modules/
 .env
 .env.*
+!mjs-docker/.env.example
 /item-*.json
 /*-item-*.json
