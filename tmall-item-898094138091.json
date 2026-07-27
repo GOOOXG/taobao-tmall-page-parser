@@ -1,0 +1,1268 @@
+{
+  "code": 0,
+  "message": null,
+  "data": {
+    "shopInfo": {
+      "shopId": "62137109",
+      "sellerId": "445529553",
+      "shopName": "msshe旗舰店",
+      "shopType": "B",
+      "shopIcon": "https://img.alicdn.com/imgextra//i2/445529553/O1CN012KRK4WYCsZnMqjF_!!445529553.jpg",
+      "shopUrl": "https://shop62137109.taobao.com/category.htm",
+      "overallScore": 4.9,
+      "favorableRate": {
+        "type": "88VIP",
+        "percentage": 98
+      },
+      "averageShippingTime": "9小时",
+      "customerServiceSatisfaction": 94,
+      "ratings": [
+        {
+          "name": "宝贝质量",
+          "score": 4.9
+        },
+        {
+          "name": "物流速度",
+          "score": 4.9
+        },
+        {
+          "name": "服务保障",
+          "score": 5
+        }
+      ],
+      "creditLevel": 18,
+      "actions": [
+        "客服",
+        "进店"
+      ]
+    },
+    "spuInfo": {
+      "itemId": 898094138091,
+      "title": "面膜软牛仔裤MsShe大码女装2026夏装胖mm微喇叭七分裤子薄款200斤",
+      "media": {
+        "videoCover": "https://img.alicdn.com/bao/uploaded/i4/445529553/O1CN01cmxd4k2KRKlw04j8F_!!445529553.jpg",
+        "video": {
+          "videoId": "515605271136",
+          "videoUrl": "https://cloud.video.taobao.com/play/u/445529553/p/2/e/6/t/1/515605271136.mp4?appKey=38829"
+        },
+        "mainImages": [
+          "https://img.alicdn.com/bao/uploaded/i4/445529553/O1CN01cmxd4k2KRKlw04j8F_!!445529553.jpg",
+          "https://img.alicdn.com/imgextra/i4/445529553/O1CN01LLQdMC2KRKlGc3CGz_!!445529553.jpg",
+          "https://img.alicdn.com/imgextra/i1/445529553/O1CN01mor5dy2KRKlGmrDhr_!!445529553.jpg",
+          "https://img.alicdn.com/imgextra/i3/445529553/O1CN01f2FOzS2KRKlGrlfWw_!!445529553.jpg",
+          "https://img.alicdn.com/imgextra/i4/445529553/O1CN01845FlE2KRKlGr9MML_!!445529553.jpg"
+        ]
+      },
+      "salesInfo": {
+        "soldText": "已售 3000+",
+        "soldCount": "3000+",
+        "invoiceAvailable": true,
+        "invoiceText": "可开发票",
+        "cartAddText": "超5千人加购"
+      },
+      "priceInfo": {
+        "currency": "CNY",
+        "unit": "￥",
+        "currentPrice": {
+          "title": "平台加补后",
+          "text": "180.62",
+          "amount": 18062
+        },
+        "originalPrice": {
+          "title": "优惠前",
+          "text": "278.85",
+          "amount": 27885
+        },
+        "campaign": {
+          "logo": "https://img.alicdn.com/i3/O1CN01934e4l5ZsAG1BGJS_!!4611686018427384654-2-atmosphere_center_image_storag-merlin-582-72.png",
+          "backgroundImage": "https://gw.alicdn.com/imgextra/i2/O1CN01zCrDwX1F24ffkfW6E_!!6000000000428-0-tps-1500-256.jpg",
+          "endTimeText": "7月31日 24点",
+          "statusText": "结束"
+        }
+      },
+      "couponInfo": {
+        "items": [
+          {
+            "type": "officialDiscount",
+            "text": "官方立减15%省42元",
+            "discountRate": "15%",
+            "discountAmount": 4200
+          },
+          {
+            "type": "taoCoin",
+            "text": "淘金币已抵2.4元",
+            "discountRate": null,
+            "discountAmount": 240
+          },
+          {
+            "type": "other",
+            "text": "立减41.83元"
+          },
+          {
+            "type": "other",
+            "text": "店铺新客减12元"
+          }
+        ]
+      },
+      "deliveryInfo": {
+        "estimatedDelivery": "预计6小时内发货，后天送达",
+        "freight": "快递: 免运费",
+        "origin": "广东广州",
+        "destination": {
+          "city": "徐州市",
+          "district": "贾汪区"
+        }
+      },
+      "guaranteeInfo": [
+        "大促价保",
+        "假一赔四",
+        "极速退款",
+        "7天无理由退换"
+      ],
+      "paymentInfo": [
+        "信用卡支付"
+      ]
+    },
+    "skuInfo": {
+      "properties": [
+        {
+          "propertyId": "1627207",
+          "propertyName": "颜色分类",
+          "displayModeToggleText": "切换大图模式",
+          "itemPropertyValues": [
+            {
+              "valueId": "794660730",
+              "value": "牛仔浅蓝色现货",
+              "pic": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01AJnrMR2KRKlGe1hEH_!!445529553.jpg",
+              "badge": null
+            },
+            {
+              "valueId": "805132699",
+              "value": "牛仔黑色现货",
+              "pic": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01P0sEeg2KRKlH6zZIc_!!445529553.jpg",
+              "badge": null
+            },
+            {
+              "valueId": "382032378",
+              "value": "牛仔浅蓝色",
+              "pic": "https://gw.alicdn.com/bao/uploaded/i3/445529553/O1CN01vT1FsB2KRKlGmr9Y6_!!445529553.jpg",
+              "badge": null
+            },
+            {
+              "valueId": "39831894",
+              "value": "牛仔黑色",
+              "pic": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01fmYQyk2KRKlGe3EqE_!!445529553.jpg",
+              "badge": null
+            }
+          ]
+        },
+        {
+          "propertyId": "20509",
+          "propertyName": "尺码",
+          "itemPropertyValues": [
+            {
+              "valueId": "28317",
+              "value": "XL",
+              "pic": null,
+              "badge": null
+            },
+            {
+              "valueId": "6145171",
+              "value": "2XL",
+              "pic": null,
+              "badge": null
+            },
+            {
+              "valueId": "115781",
+              "value": "3XL",
+              "pic": null,
+              "badge": null
+            },
+            {
+              "valueId": "3727387",
+              "value": "4XL",
+              "pic": null,
+              "badge": null
+            },
+            {
+              "valueId": "7539404",
+              "value": "5XL",
+              "pic": null,
+              "badge": null
+            },
+            {
+              "valueId": "28128814",
+              "value": "6XL",
+              "pic": null,
+              "badge": null
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "skuId": "6002568096818",
+          "skuName": "牛仔浅蓝色现货 / XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01AJnrMR2KRKlGe1hEH_!!445529553.jpg",
+          "finalSkuPrice": 18062,
+          "thirdOriginalDiscountPrice": 18062,
+          "valueList": [
+            "794660730",
+            "28317"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 18062,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "66"
+        },
+        {
+          "skuId": "6002568096826",
+          "skuName": "牛仔浅蓝色现货 / 2XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01AJnrMR2KRKlGe1hEH_!!445529553.jpg",
+          "finalSkuPrice": 17962,
+          "thirdOriginalDiscountPrice": 17962,
+          "valueList": [
+            "794660730",
+            "6145171"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 17962,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "122"
+        },
+        {
+          "skuId": "6002568096810",
+          "skuName": "牛仔浅蓝色现货 / 3XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01AJnrMR2KRKlGe1hEH_!!445529553.jpg",
+          "finalSkuPrice": 17962,
+          "thirdOriginalDiscountPrice": 17962,
+          "valueList": [
+            "794660730",
+            "115781"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 17962,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "176"
+        },
+        {
+          "skuId": "6002568096822",
+          "skuName": "牛仔浅蓝色现货 / 4XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01AJnrMR2KRKlGe1hEH_!!445529553.jpg",
+          "finalSkuPrice": 17962,
+          "thirdOriginalDiscountPrice": 17962,
+          "valueList": [
+            "794660730",
+            "3727387"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 17962,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "98"
+        },
+        {
+          "skuId": "6002568096830",
+          "skuName": "牛仔浅蓝色现货 / 5XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01AJnrMR2KRKlGe1hEH_!!445529553.jpg",
+          "finalSkuPrice": 17962,
+          "thirdOriginalDiscountPrice": 17962,
+          "valueList": [
+            "794660730",
+            "7539404"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 17962,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "43"
+        },
+        {
+          "skuId": "6002568096814",
+          "skuName": "牛仔浅蓝色现货 / 6XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01AJnrMR2KRKlGe1hEH_!!445529553.jpg",
+          "finalSkuPrice": 17962,
+          "thirdOriginalDiscountPrice": 17962,
+          "valueList": [
+            "794660730",
+            "28128814"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 17962,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "43"
+        },
+        {
+          "skuId": "6002568096820",
+          "skuName": "牛仔黑色现货 / XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01P0sEeg2KRKlH6zZIc_!!445529553.jpg",
+          "finalSkuPrice": 17962,
+          "thirdOriginalDiscountPrice": 17962,
+          "valueList": [
+            "805132699",
+            "28317"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 17962,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "15"
+        },
+        {
+          "skuId": "6002568096828",
+          "skuName": "牛仔黑色现货 / 2XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01P0sEeg2KRKlH6zZIc_!!445529553.jpg",
+          "finalSkuPrice": 17962,
+          "thirdOriginalDiscountPrice": 17962,
+          "valueList": [
+            "805132699",
+            "6145171"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 17962,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "94"
+        },
+        {
+          "skuId": "6002568096812",
+          "skuName": "牛仔黑色现货 / 3XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01P0sEeg2KRKlH6zZIc_!!445529553.jpg",
+          "finalSkuPrice": 17962,
+          "thirdOriginalDiscountPrice": 17962,
+          "valueList": [
+            "805132699",
+            "115781"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 17962,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "85"
+        },
+        {
+          "skuId": "6002568096824",
+          "skuName": "牛仔黑色现货 / 4XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01P0sEeg2KRKlH6zZIc_!!445529553.jpg",
+          "finalSkuPrice": 17962,
+          "thirdOriginalDiscountPrice": 17962,
+          "valueList": [
+            "805132699",
+            "3727387"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 17962,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "75"
+        },
+        {
+          "skuId": "6002568096832",
+          "skuName": "牛仔黑色现货 / 5XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01P0sEeg2KRKlH6zZIc_!!445529553.jpg",
+          "finalSkuPrice": 17962,
+          "thirdOriginalDiscountPrice": 17962,
+          "valueList": [
+            "805132699",
+            "7539404"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 17962,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "64"
+        },
+        {
+          "skuId": "6002568096816",
+          "skuName": "牛仔黑色现货 / 6XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01P0sEeg2KRKlH6zZIc_!!445529553.jpg",
+          "finalSkuPrice": 17962,
+          "thirdOriginalDiscountPrice": 17962,
+          "valueList": [
+            "805132699",
+            "28128814"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 17962,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "53"
+        },
+        {
+          "skuId": "6002568096819",
+          "skuName": "牛仔浅蓝色 / XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i3/445529553/O1CN01vT1FsB2KRKlGmr9Y6_!!445529553.jpg",
+          "finalSkuPrice": 27885,
+          "thirdOriginalDiscountPrice": 27885,
+          "valueList": [
+            "382032378",
+            "28317"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 27885,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "0"
+        },
+        {
+          "skuId": "6002568096827",
+          "skuName": "牛仔浅蓝色 / 2XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i3/445529553/O1CN01vT1FsB2KRKlGmr9Y6_!!445529553.jpg",
+          "finalSkuPrice": 27885,
+          "thirdOriginalDiscountPrice": 27885,
+          "valueList": [
+            "382032378",
+            "6145171"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 27885,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "0"
+        },
+        {
+          "skuId": "6002568096811",
+          "skuName": "牛仔浅蓝色 / 3XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i3/445529553/O1CN01vT1FsB2KRKlGmr9Y6_!!445529553.jpg",
+          "finalSkuPrice": 27885,
+          "thirdOriginalDiscountPrice": 27885,
+          "valueList": [
+            "382032378",
+            "115781"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 27885,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "0"
+        },
+        {
+          "skuId": "6002568096823",
+          "skuName": "牛仔浅蓝色 / 4XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i3/445529553/O1CN01vT1FsB2KRKlGmr9Y6_!!445529553.jpg",
+          "finalSkuPrice": 27885,
+          "thirdOriginalDiscountPrice": 27885,
+          "valueList": [
+            "382032378",
+            "3727387"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 27885,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "0"
+        },
+        {
+          "skuId": "6002568096831",
+          "skuName": "牛仔浅蓝色 / 5XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i3/445529553/O1CN01vT1FsB2KRKlGmr9Y6_!!445529553.jpg",
+          "finalSkuPrice": 27885,
+          "thirdOriginalDiscountPrice": 27885,
+          "valueList": [
+            "382032378",
+            "7539404"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 27885,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "0"
+        },
+        {
+          "skuId": "6002568096815",
+          "skuName": "牛仔浅蓝色 / 6XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i3/445529553/O1CN01vT1FsB2KRKlGmr9Y6_!!445529553.jpg",
+          "finalSkuPrice": 27885,
+          "thirdOriginalDiscountPrice": 27885,
+          "valueList": [
+            "382032378",
+            "28128814"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 27885,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "0"
+        },
+        {
+          "skuId": "6002568096821",
+          "skuName": "牛仔黑色 / XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01fmYQyk2KRKlGe3EqE_!!445529553.jpg",
+          "finalSkuPrice": 27885,
+          "thirdOriginalDiscountPrice": 27885,
+          "valueList": [
+            "39831894",
+            "28317"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 27885,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "0"
+        },
+        {
+          "skuId": "6002568096829",
+          "skuName": "牛仔黑色 / 2XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01fmYQyk2KRKlGe3EqE_!!445529553.jpg",
+          "finalSkuPrice": 27885,
+          "thirdOriginalDiscountPrice": 27885,
+          "valueList": [
+            "39831894",
+            "6145171"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 27885,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "0"
+        },
+        {
+          "skuId": "6002568096813",
+          "skuName": "牛仔黑色 / 3XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01fmYQyk2KRKlGe3EqE_!!445529553.jpg",
+          "finalSkuPrice": 27885,
+          "thirdOriginalDiscountPrice": 27885,
+          "valueList": [
+            "39831894",
+            "115781"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 27885,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "0"
+        },
+        {
+          "skuId": "6002568096825",
+          "skuName": "牛仔黑色 / 4XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01fmYQyk2KRKlGe3EqE_!!445529553.jpg",
+          "finalSkuPrice": 27885,
+          "thirdOriginalDiscountPrice": 27885,
+          "valueList": [
+            "39831894",
+            "3727387"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 27885,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "0"
+        },
+        {
+          "skuId": "6002568096833",
+          "skuName": "牛仔黑色 / 5XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01fmYQyk2KRKlGe3EqE_!!445529553.jpg",
+          "finalSkuPrice": 27885,
+          "thirdOriginalDiscountPrice": 27885,
+          "valueList": [
+            "39831894",
+            "7539404"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 27885,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "0"
+        },
+        {
+          "skuId": "6002568096817",
+          "skuName": "牛仔黑色 / 6XL",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/445529553/O1CN01fmYQyk2KRKlGe3EqE_!!445529553.jpg",
+          "finalSkuPrice": 27885,
+          "thirdOriginalDiscountPrice": 27885,
+          "valueList": [
+            "39831894",
+            "28128814"
+          ],
+          "itemPrice": 27885,
+          "rate": null,
+          "finalPrice": 27885,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "0"
+        }
+      ],
+      "quantityInfo": {
+        "value": 1,
+        "minimum": 1,
+        "stockQuantity": 200,
+        "stockText": "有货"
+      }
+    },
+    "detailPageInfo": {
+      "sectionOrder": [
+        {
+          "name": "comments",
+          "title": "用户评价"
+        },
+        {
+          "name": "base_drops",
+          "title": "参数信息"
+        },
+        {
+          "name": "size_info",
+          "title": "尺码信息"
+        },
+        {
+          "name": "factory_qualification",
+          "title": "验厂资质"
+        },
+        {
+          "name": "desc",
+          "title": "图文详情"
+        },
+        {
+          "name": "recommends",
+          "title": "本店推荐"
+        },
+        {
+          "name": "guessULike",
+          "title": "看了又看"
+        }
+      ],
+      "reviewInfo": {
+        "totalCount": "700+",
+        "favorableRateText": "近3个月好评率高达98.1%",
+        "keywords": [
+          {
+            "text": "穿着很舒适",
+            "count": 67
+          },
+          {
+            "text": "非常喜爱",
+            "count": 13
+          },
+          {
+            "text": "显瘦效果好",
+            "count": 13
+          },
+          {
+            "text": "外观好看",
+            "count": 11
+          },
+          {
+            "text": "长度很喜欢",
+            "count": 6
+          },
+          {
+            "text": "微辣裤",
+            "count": 6
+          },
+          {
+            "text": "尺码偏大",
+            "count": 4
+          }
+        ],
+        "samples": [
+          {
+            "userName": "好的",
+            "date": "2026-07-02",
+            "content": "身高160，体重70kg，大腿小腿还很粗，一直买不到合适舒服的牛仔裤，这条裤子堪称完美，无论面料的柔软度，腰臀的比例，还是裤腿的形状，都特别好。必须五星好评",
+            "skuInfo": "颜色分类:牛仔浅蓝色现货;尺码:2XL",
+            "repurchaseText": "本店买过2次",
+            "media": [
+              {
+                "type": "image",
+                "imageUrl": "https://gw.alicdn.com/bao/uploaded/i3/O1CN01W7mHcx1K8YLfU92qE_!!4611686018427382047-0-rate.jpg"
+              },
+              {
+                "type": "image",
+                "imageUrl": "https://gw.alicdn.com/bao/uploaded/i1/O1CN016zWQhP1K8YLdfoLz7_!!4611686018427382047-0-rate.jpg"
+              },
+              {
+                "type": "image",
+                "imageUrl": "https://gw.alicdn.com/bao/uploaded/i3/O1CN01J7EHgr1K8YLduy2CB_!!4611686018427382047-0-rate.jpg"
+              }
+            ]
+          },
+          {
+            "userName": "匿名买家",
+            "date": "2026-07-02",
+            "content": "软、薄、有弹性，非常舒适，版型也很显瘦，我165cm，180斤，供参考",
+            "skuInfo": "颜色分类:牛仔浅蓝色现货-6052;尺码:4XL",
+            "repurchaseText": "本店买过2次",
+            "media": [
+              {
+                "type": "image",
+                "imageUrl": "https://gw.alicdn.com/bao/uploaded/i2/O1CN01Ktz3SK1fMOFFoWqX0_!!4611686018427381592-0-tbbala.jpg"
+              }
+            ]
+          }
+        ]
+      },
+      "parameters": {
+        "highlighted": [
+          {
+            "name": "面料",
+            "value": "棉,聚酯纤维"
+          },
+          {
+            "name": "裤型",
+            "value": "微喇裤"
+          },
+          {
+            "name": "腰型",
+            "value": "高腰"
+          },
+          {
+            "name": "风格",
+            "value": "通勤风"
+          },
+          {
+            "name": "适用季节",
+            "value": "春季"
+          },
+          {
+            "name": "款式",
+            "value": "直筒"
+          }
+        ],
+        "basic": [
+          {
+            "name": "品牌",
+            "value": "MsShe/慕姗诗怡"
+          },
+          {
+            "name": "通勤",
+            "value": "韩版"
+          },
+          {
+            "name": "吊牌价",
+            "value": "599元"
+          },
+          {
+            "name": "是否商场同款",
+            "value": "否"
+          },
+          {
+            "name": "适用场景",
+            "value": "上班"
+          },
+          {
+            "name": "材质成分",
+            "value": "棉74.2% 聚酯纤维24.3% 聚氨酯弹性纤维(氨纶)1.5%"
+          },
+          {
+            "name": "货号",
+            "value": "TH505254"
+          },
+          {
+            "name": "大码女装分类",
+            "value": "牛仔裤"
+          },
+          {
+            "name": "适用年龄",
+            "value": "25-29周岁"
+          },
+          {
+            "name": "组合形式",
+            "value": "单件"
+          },
+          {
+            "name": "上市年份季节",
+            "value": "2025年春季"
+          },
+          {
+            "name": "领型",
+            "value": "其他/other"
+          },
+          {
+            "name": "适用人群",
+            "value": "女士"
+          },
+          {
+            "name": "尺码",
+            "value": "XL 2XL 3XL 4XL 5XL 6XL"
+          },
+          {
+            "name": "颜色分类",
+            "value": "牛仔浅蓝色现货 牛仔黑色现货 牛仔浅蓝色 牛仔黑色"
+          }
+        ]
+      },
+      "sizeInfo": {
+        "recommendation": {
+          "buyerFitPercentage": null,
+          "fitAssessment": "尺码标准",
+          "recommendedSize": "3XL"
+        },
+        "buyerReferences": {
+          "title": "买家尺码参考",
+          "headers": [
+            "已购买家",
+            "身高·厘米",
+            "体重·公斤",
+            "已购"
+          ],
+          "rows": [
+            [
+              "甜**",
+              "164",
+              "87",
+              "3XL"
+            ],
+            [
+              "咸**",
+              "159",
+              "70",
+              "3XL"
+            ],
+            [
+              "烤**",
+              "167",
+              "85",
+              "3XL"
+            ],
+            [
+              "螺**",
+              "161",
+              "68",
+              "XL"
+            ],
+            [
+              "折**",
+              "160",
+              "64",
+              "XL"
+            ],
+            [
+              "小**",
+              "167",
+              "70",
+              "2XL"
+            ],
+            [
+              "生**",
+              "160",
+              "70",
+              "2XL"
+            ]
+          ]
+        },
+        "moreActionText": "查看完整尺码"
+      },
+      "imageTextInfo": {
+        "images": [
+          {
+            "index": 0,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01qzdtZI2KRKlHdDQ07_!!445529553.png",
+            "width": 790,
+            "height": 1300
+          },
+          {
+            "index": 1,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01fz9mTp2KRKlH6zEWA_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 2,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01QhNBZj2KRKlGc3CHI_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 3,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN014OjzOx2KRKlGe1tgA_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 4,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN01ogadMh2KRKlGumwwH_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 5,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01l8wLiO2KRKlGc4KvL_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 6,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01qjys2x2KRKlGzPY6U_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 7,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01pOjdmT2KRKlGzRjUO_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 8,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01xhfT5D2KRKlCGewAg_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 9,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01P6GJNe2KRKlGmsh9t_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 10,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01WxEe9j2KRKlH6yd5t_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 11,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN01txcBRf2KRKlGzNjrc_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 12,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01xc1pqH2KRKlCGeT3v_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 13,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN01DNidTm2KRKlGe0UQ9_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 14,
+            "url": "https://img.alicdn.com/imgextra/i1/445529553/O1CN012Us1UK2KRKlHNOV6E_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 15,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN01AmmTOW2KRKlHNNhCq_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 16,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01XYw9rq2KRKlCGeGbU_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 17,
+            "url": "https://img.alicdn.com/imgextra/i1/445529553/O1CN01UhfJH92KRKlGZ9v8D_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 18,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN01IAqCav2KRKlCGebN8_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 19,
+            "url": "https://img.alicdn.com/imgextra/i1/445529553/O1CN01fupZyk2KRKlGdDRpc_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 20,
+            "url": "https://img.alicdn.com/imgextra/i1/445529553/O1CN01waHJp52KRKlGs2Zmc_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 21,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01nATkMg2KRKlGs2qP8_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 22,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01QzJ73U2KRKlH6xM88_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 23,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN013bn1VP2KRKlCGfL5c_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 24,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01eY4Lt12KRKlGc4KvO_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 25,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01ZWGKBB2KRKlCGd3lv_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 26,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01Vboq7u2KRKlGs4zOK_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 27,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01PxSpEZ2KRKlGzQkvZ_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 28,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN0118VvC22KRKlGzNfhU_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 29,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01sVf60d2KRKlGdFG76_!!445529553.jpg",
+            "width": 1200,
+            "height": 890
+          },
+          {
+            "index": 30,
+            "url": "https://img.alicdn.com/imgextra/i1/445529553/O1CN01oW90Ms2KRKlGdEFju_!!445529553.jpg",
+            "width": 1200,
+            "height": 889
+          },
+          {
+            "index": 31,
+            "url": "https://img.alicdn.com/imgextra/i1/445529553/O1CN01n6X8Af2KRKlGmt1wd_!!445529553.jpg",
+            "width": 1200,
+            "height": 890
+          },
+          {
+            "index": 32,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01dMMHs52KRKlGc2f0p_!!445529553.jpg",
+            "width": 1200,
+            "height": 889
+          },
+          {
+            "index": 33,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN01aDh0eZ2KRKlH6zVAI_!!445529553.jpg",
+            "width": 1200,
+            "height": 890
+          },
+          {
+            "index": 34,
+            "url": "https://img.alicdn.com/imgextra/i1/445529553/O1CN019gUzSL2KRKlGrAV34_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 35,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01QPgBZ62KRKlGxs2y0_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 36,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01Muuu9f2KRKlHNOIdM_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 37,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01my8ZsA2KRKlGzOoMi_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 38,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01mGWNYZ2KRKlGrkreB_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 39,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN01y9FRaF2KRKlGs2ykR_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 40,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01jwOQBf2KRKlGZBjM9_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 41,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN013GdcnX2KRKlGzRbBO_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 42,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01gxuV7D2KRKlGr9MNK_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 43,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN017vaq8c2KRKlGms5ke_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 44,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN01d6xXuD2KRKlGrAV36_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 45,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01kVQvud2KRKlGzU4xj_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 46,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01w4TcgO2KRKlILfSld_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 47,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01bjWOE92KRKlGuoUar_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 48,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01LL3NA72KRKlGunp0v_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 49,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN01x1JEg02KRKlHNNQbc_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 50,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01g650VJ2KRKlGs4aQf_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 51,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN01Wu3MwY2KRKlGr9pSf_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 52,
+            "url": "https://img.alicdn.com/imgextra/i1/445529553/O1CN015OYGTL2KRKlGc33zA_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 53,
+            "url": "https://img.alicdn.com/imgextra/i1/445529553/O1CN013crawt2KRKlH6xM8U_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 54,
+            "url": "https://img.alicdn.com/imgextra/i1/445529553/O1CN01aozWNZ2KRKlGunYOo_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 55,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN01zov7WR2KRKlGs4Jnl_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 56,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01hQkLV32KRKlGr81Bj_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 57,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01b92c7k2KRKlH6xURu_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 58,
+            "url": "https://img.alicdn.com/imgextra/i4/445529553/O1CN01oxDZaa2KRKlCGf4UA_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 59,
+            "url": "https://img.alicdn.com/imgextra/i1/445529553/O1CN01fu9ide2KRKlGunxLG_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 60,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01ucO3qg2KRKlILej3i_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 61,
+            "url": "https://img.alicdn.com/imgextra/i2/445529553/O1CN01gT2qsK2KRKlGZBfEP_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 62,
+            "url": "https://img.alicdn.com/imgextra/i3/445529553/O1CN01tNBwqO2KRKlILezgo_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 63,
+            "url": "https://img.alicdn.com/imgextra/i1/445529553/O1CN01OisYyK2KRKlILfOc9_!!445529553.jpg",
+            "width": 790,
+            "height": 300
+          },
+          {
+            "index": 64,
+            "url": "https://img.alicdn.com/imgextra/i3/O1CN01XU1Y2d1Sk7fIMOkeU_!!6000000002284-2-tps-1125-1446.png",
+            "width": 1,
+            "height": 1
+          }
+        ]
+      }
+    }
+  },
+  "recordTime": null
+}

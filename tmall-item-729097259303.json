@@ -1,0 +1,497 @@
+{
+  "code": 0,
+  "message": null,
+  "data": {
+    "shopInfo": {
+      "shopId": "583721758",
+      "sellerId": "2201223381466",
+      "shopName": "kiddycolor旗舰店",
+      "shopType": "B",
+      "shopIcon": "https://img.alicdn.com/imgextra/i3/6000000004311/O1CN01S4eD3M1hiU5DCVb7k_!!6000000004311-0-shopmanager.jpg",
+      "shopUrl": "https://shop583721758.taobao.com/category.htm",
+      "overallScore": 5,
+      "favorableRate": {
+        "type": "88VIP",
+        "percentage": 98
+      },
+      "averageShippingTime": "13小时",
+      "ratings": [
+        {
+          "name": "宝贝质量",
+          "score": 4.9
+        },
+        {
+          "name": "物流速度",
+          "score": 5
+        },
+        {
+          "name": "服务保障",
+          "score": 4.8
+        }
+      ],
+      "creditLevel": 13,
+      "actions": [
+        "客服",
+        "进店"
+      ]
+    },
+    "spuInfo": {
+      "itemId": 729097259303,
+      "title": "儿童服装设计手工diy玩具古风汉服3-6岁小女孩5生日礼物10岁以上",
+      "media": {
+        "videoCover": "https://gw.alicdn.com/imgextra/O1CN018lqPxJ1MhTmtJhpZA_!!2201223381466-0-picasso.jpg",
+        "video": {
+          "videoId": "431514737194",
+          "videoUrl": "https://cloud.video.taobao.com/play/u/2201223381466/p/2/e/6/t/1/431514737194.mp4?appKey=38829"
+        },
+        "mainImages": [
+          "https://gw.alicdn.com/imgextra/O1CN018lqPxJ1MhTmtJhpZA_!!2201223381466-0-picasso.jpg",
+          "https://gw.alicdn.com/imgextra/O1CN01BB8C2O1MhTUTChcoi_!!2201223381466.jpg",
+          "https://gw.alicdn.com/imgextra/O1CN01rbQcNU1MhTUTObQuZ_!!2201223381466.jpg",
+          "https://gw.alicdn.com/imgextra/O1CN01WkQVPm1MhTUKb0DLk_!!2201223381466.jpg",
+          "https://gw.alicdn.com/imgextra/O1CN01h91LqL1MhTUXwsml3_!!2201223381466.jpg"
+        ]
+      },
+      "salesInfo": {
+        "soldText": "已售 2000+",
+        "soldCount": "2000+",
+        "invoiceAvailable": false,
+        "cartAddText": "超1千人加购"
+      },
+      "priceInfo": {
+        "currency": "CNY",
+        "unit": "￥",
+        "currentPrice": {
+          "title": "店铺优惠后",
+          "text": "62.1",
+          "amount": 6210,
+          "suffix": "起"
+        },
+        "originalPrice": {
+          "title": "优惠前",
+          "text": "89",
+          "amount": 8900,
+          "suffix": "起"
+        },
+        "campaign": {
+          "logo": "https://img.alicdn.com/i4/O1CN01BMSpwR6stPC0Ta6d_!!4611686018427384654-2-atmosphere_center_image_storag-merlin-235-72.png",
+          "backgroundImage": "https://gw.alicdn.com/imgextra/i2/O1CN01zCrDwX1F24ffkfW6E_!!6000000000428-0-tps-1500-256.jpg",
+          "endTimeText": "7月31日 24点",
+          "statusText": "结束"
+        }
+      },
+      "couponInfo": {
+        "items": [
+          {
+            "type": "other",
+            "text": "官方立减26.9元"
+          }
+        ]
+      },
+      "deliveryInfo": {
+        "estimatedDelivery": "预计明天发货，后天18点前送达",
+        "freight": "快递: 免运费",
+        "origin": "浙江宁波",
+        "destination": {
+          "city": "徐州市",
+          "district": "贾汪区"
+        }
+      },
+      "guaranteeInfo": [
+        "大促价保",
+        "退货宝",
+        "假一赔四",
+        "极速退款",
+        "7天无理由退换"
+      ],
+      "paymentInfo": [
+        "信用卡支付"
+      ]
+    },
+    "skuInfo": {
+      "properties": [
+        {
+          "propertyId": "1627207",
+          "propertyName": "颜色分类",
+          "displayModeToggleText": "切换大图模式",
+          "itemPropertyValues": [
+            {
+              "valueId": "26041854325",
+              "value": "浪漫粉（10套礼服+4个展示人台）",
+              "pic": "https://gw.alicdn.com/bao/uploaded/i2/2201223381466/O1CN01ReuMX41MhTfkdjxhT_!!2201223381466.jpg",
+              "badge": "千人加购"
+            },
+            {
+              "valueId": "26041854326",
+              "value": "梦幻蓝（10套礼服+4个展示人台）",
+              "pic": "https://gw.alicdn.com/bao/uploaded/i3/2201223381466/O1CN01vji2BM1MhTUZRnKFw_!!2201223381466.jpg",
+              "badge": null
+            },
+            {
+              "valueId": "41035947175",
+              "value": "锦绣华服（8套礼服+4个展示人台）",
+              "pic": "https://gw.alicdn.com/bao/uploaded/i4/2201223381466/O1CN01n1cEi81MhTjOVD5QW_!!2201223381466.jpg",
+              "badge": null
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "skuId": "5055176913842",
+          "skuName": "浪漫粉（10套礼服+4个展示人台）",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i2/2201223381466/O1CN01ReuMX41MhTfkdjxhT_!!2201223381466.jpg",
+          "finalSkuPrice": 6210,
+          "thirdOriginalDiscountPrice": 6210,
+          "valueList": [
+            "26041854325"
+          ],
+          "itemPrice": 8900,
+          "rate": null,
+          "finalPrice": 6210,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "5055176913843",
+          "skuName": "梦幻蓝（10套礼服+4个展示人台）",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i3/2201223381466/O1CN01vji2BM1MhTUZRnKFw_!!2201223381466.jpg",
+          "finalSkuPrice": 6210,
+          "thirdOriginalDiscountPrice": 6210,
+          "valueList": [
+            "26041854326"
+          ],
+          "itemPrice": 8900,
+          "rate": null,
+          "finalPrice": 6210,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6136133806970",
+          "skuName": "锦绣华服（8套礼服+4个展示人台）",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/2201223381466/O1CN01n1cEi81MhTjOVD5QW_!!2201223381466.jpg",
+          "finalSkuPrice": 7210,
+          "thirdOriginalDiscountPrice": 7210,
+          "valueList": [
+            "41035947175"
+          ],
+          "itemPrice": 9900,
+          "rate": null,
+          "finalPrice": 7210,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        }
+      ],
+      "quantityInfo": {
+        "value": 1,
+        "minimum": 1,
+        "stockQuantity": 200,
+        "stockText": "有货"
+      }
+    },
+    "detailPageInfo": {
+      "sectionOrder": [
+        {
+          "name": "comments",
+          "title": "用户评价"
+        },
+        {
+          "name": "base_drops",
+          "title": "参数信息"
+        },
+        {
+          "name": "factory_qualification",
+          "title": "验厂资质"
+        },
+        {
+          "name": "desc",
+          "title": "图文详情"
+        },
+        {
+          "name": "recommends",
+          "title": "本店推荐"
+        },
+        {
+          "name": "guessULike",
+          "title": "看了又看"
+        }
+      ],
+      "reviewInfo": {
+        "totalCount": "200+",
+        "favorableRateText": "好评率98.8%",
+        "keywords": [
+          {
+            "text": "孩子喜欢",
+            "count": 17
+          },
+          {
+            "text": "质量好",
+            "count": 10
+          },
+          {
+            "text": "设计很有少女感",
+            "count": 10
+          },
+          {
+            "text": "容易整理",
+            "count": 3
+          },
+          {
+            "text": "发货速度很快",
+            "count": 2
+          },
+          {
+            "text": "包装很高级",
+            "count": 2
+          },
+          {
+            "text": "人台用来做衣服",
+            "count": 1
+          }
+        ],
+        "samples": [
+          {
+            "userName": "喵星球上的球",
+            "date": "2026-05-30",
+            "content": "不了很漂亮 孩子特别喜欢 发挥孩子的想象力 ",
+            "skuInfo": "颜色分类:浪漫粉（10套礼服+4个展示人台）",
+            "media": [
+              {
+                "type": "video",
+                "imageUrl": "https://gw.alicdn.com/bao/uploaded//imgextra/i2/O1CN01XpI0hg29bRjQVUglX_!!4611686018427380518-0-rate.jpg",
+                "videoUrl": "https://gw.alicdn.com/bao/uploaded//play/u/null/p/1/d/hd/e/6/t/1/567499369091.mp4"
+              },
+              {
+                "type": "image",
+                "imageUrl": "https://gw.alicdn.com/bao/uploaded/i3/830178086/O1CN01uxuG1Q29bRjQVVIEE~livephoto~_!!830178086-0-rate_livephoto.jpg"
+              }
+            ]
+          },
+          {
+            "userName": "ChanelMi",
+            "date": "2026-06-12",
+            "content": "很好玩不错 很喜欢 有趣还好玩 很好看",
+            "skuInfo": "颜色分类:梦幻蓝（10套礼服+4个展示人台）",
+            "media": [
+              {
+                "type": "image",
+                "imageUrl": "https://gw.alicdn.com/bao/uploaded/i1/O1CN01iyXQYO1r9ol40MztB_!!4611686018427381589-0-rate.jpg"
+              }
+            ]
+          }
+        ]
+      },
+      "parameters": {
+        "highlighted": [
+          {
+            "name": "材质",
+            "value": "塑料"
+          },
+          {
+            "name": "适用年龄",
+            "value": "3-10岁"
+          }
+        ],
+        "basic": [
+          {
+            "name": "品牌",
+            "value": "KIDDYCOLOR/凯蒂卡乐"
+          },
+          {
+            "name": "型号",
+            "value": "K49902"
+          },
+          {
+            "name": "适用性别",
+            "value": "女"
+          },
+          {
+            "name": "玩具类型",
+            "value": "其他过家家玩具"
+          },
+          {
+            "name": "颜色分类",
+            "value": "浪漫粉（10套礼服+4个展示人台） 梦幻蓝（10套礼服+4个展示人台） 锦绣华服（8套礼服+4个展示人台）"
+          }
+        ]
+      },
+      "imageTextInfo": {
+        "images": [
+          {
+            "index": 0,
+            "url": "https://img.alicdn.com/imgextra/i3/2201223381466/O1CN013Wj7HF1MhTUd3DU3A_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 1,
+            "url": "https://img.alicdn.com/imgextra/i3/2201223381466/O1CN018DOstb1MhTUTPOykc_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 2,
+            "url": "https://img.alicdn.com/imgextra/i4/2201223381466/O1CN01AyxF4K1MhTUTDVhsD_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 3,
+            "url": "https://img.alicdn.com/imgextra/i3/2201223381466/O1CN01n9okHj1MhTUQVEGwt_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 4,
+            "url": "https://img.alicdn.com/imgextra/i1/2201223381466/O1CN01oxjUmp1MhTUYPjaIV_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 5,
+            "url": "https://img.alicdn.com/imgextra/i4/2201223381466/O1CN010iCT7Y1MhTUPGqLLm_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 6,
+            "url": "https://img.alicdn.com/imgextra/i3/2201223381466/O1CN01tChROj1MhTUWQaz46_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 7,
+            "url": "https://img.alicdn.com/imgextra/i4/2201223381466/O1CN01HaLfU01MhTUZR92jq_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 8,
+            "url": "https://img.alicdn.com/imgextra/i4/2201223381466/O1CN01SxPzpV1MhTUTPPiVi_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 9,
+            "url": "https://img.alicdn.com/imgextra/i2/2201223381466/O1CN01EkmnOm1MhTUYPjFVq_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 10,
+            "url": "https://img.alicdn.com/imgextra/i3/2201223381466/O1CN01IEbsJN1MhTUXxe7DM~crop,0,0,790,1580~_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 11,
+            "url": "https://img.alicdn.com/imgextra/i3/2201223381466/O1CN01IEbsJN1MhTUXxe7DM~crop,0,1580,790,328~_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 12,
+            "url": "https://img.alicdn.com/imgextra/i2/2201223381466/O1CN01cQmoNd1MhTUZR8m8N~crop,0,0,790,1580~_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 13,
+            "url": "https://img.alicdn.com/imgextra/i2/2201223381466/O1CN01cQmoNd1MhTUZR8m8N~crop,0,1580,790,84~_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 14,
+            "url": "https://img.alicdn.com/imgextra/i1/2201223381466/O1CN01FTw1OE1MhTUXxfrJh_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 15,
+            "url": "https://img.alicdn.com/imgextra/i1/2201223381466/O1CN01TcyeJc1MhTUUeuCND_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 16,
+            "url": "https://img.alicdn.com/imgextra/i4/2201223381466/O1CN01iXKR4G1MhTUXxeieM~crop,0,0,790,1580~_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 17,
+            "url": "https://img.alicdn.com/imgextra/i4/2201223381466/O1CN01iXKR4G1MhTUXxeieM~crop,0,1580,790,442~_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 18,
+            "url": "https://img.alicdn.com/imgextra/i3/2201223381466/O1CN01tFcWPH1MhTUYPkFuO_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 19,
+            "url": "https://img.alicdn.com/imgextra/i4/2201223381466/O1CN01vemRpZ1MhTUYPhyXj~crop,0,0,790,1580~_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 20,
+            "url": "https://img.alicdn.com/imgextra/i4/2201223381466/O1CN01vemRpZ1MhTUYPhyXj~crop,0,1580,790,442~_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 21,
+            "url": "https://img.alicdn.com/imgextra/i1/2201223381466/O1CN01BM6q7f1MhTUVm1WPG_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 22,
+            "url": "https://img.alicdn.com/imgextra/i1/2201223381466/O1CN01rQu2Uo1MhTjOTWOnb_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 23,
+            "url": "https://img.alicdn.com/imgextra/i2/2201223381466/O1CN018Ys4eb1MhTjO9VtNx_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 24,
+            "url": "https://img.alicdn.com/imgextra/i1/2201223381466/O1CN01MuQK561MhTUUew4o9_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 25,
+            "url": "https://img.alicdn.com/imgextra/i4/2201223381466/O1CN01wKUgFY1MhTUZR9mW7~crop,0,0,790,1580~_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 26,
+            "url": "https://img.alicdn.com/imgextra/i4/2201223381466/O1CN01wKUgFY1MhTUZR9mW7~crop,0,1580,790,277~_!!2201223381466.jpg",
+            "width": 1,
+            "height": 1
+          },
+          {
+            "index": 27,
+            "url": "https://img.alicdn.com/imgextra/i3/O1CN01XU1Y2d1Sk7fIMOkeU_!!6000000002284-2-tps-1125-1446.png",
+            "width": 1,
+            "height": 1
+          }
+        ]
+      }
+    }
+  },
+  "recordTime": null
+}

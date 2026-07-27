@@ -1,0 +1,747 @@
+{
+  "code": 0,
+  "message": null,
+  "data": {
+    "shopInfo": {
+      "shopId": "111666537",
+      "sellerId": "2122198064",
+      "shopName": "纽汇旗舰店",
+      "shopType": "B",
+      "shopIcon": "https://img.alicdn.com/imgextra/i4/2122198064/O1CN01Gk54Yh29RMjezMFYn_!!2122198064-0-shopmanager.jpg",
+      "shopUrl": "https://shop111666537.taobao.com/category.htm",
+      "overallScore": 4.7,
+      "favorableRate": {
+        "type": "88VIP",
+        "percentage": 95
+      },
+      "averageShippingTime": "2天内",
+      "customerServiceSatisfaction": 98,
+      "ratings": [
+        {
+          "name": "宝贝质量",
+          "score": 4.6
+        },
+        {
+          "name": "物流速度",
+          "score": 4.5
+        },
+        {
+          "name": "服务保障",
+          "score": 4.9
+        }
+      ],
+      "creditLevel": 17,
+      "actions": [
+        "客服",
+        "进店"
+      ]
+    },
+    "spuInfo": {
+      "itemId": 1054542185970,
+      "title": "2026新款条纹T恤半身连衣裙女夏季小个子巨好看穿搭一整套装长裙",
+      "media": {
+        "videoCover": "https://img.alicdn.com/imgextra/i3/2122198064/O1CN01Bk9mVg29RN1A2Xkk3_!!4611686018427382832-0-item_pic.jpg",
+        "video": {
+          "videoId": "566709231152",
+          "videoUrl": "https://cloud.video.taobao.com/play/u/2122198064/p/2/e/6/t/1/566709231152.mp4?appKey=38829"
+        },
+        "mainImages": [
+          "https://img.alicdn.com/imgextra/i3/2122198064/O1CN01Bk9mVg29RN1A2Xkk3_!!4611686018427382832-0-item_pic.jpg",
+          "https://img.alicdn.com/imgextra/i2/2122198064/O1CN01EcutHi29RN18aHEoy_!!2122198064.jpg",
+          "https://img.alicdn.com/imgextra/i1/2122198064/O1CN010zZ3gs29RN18pszsg_!!2122198064.jpg",
+          "https://img.alicdn.com/imgextra/i1/2122198064/O1CN01Y7VUwp29RN13v2cIS_!!2122198064.jpg",
+          "https://img.alicdn.com/imgextra/i1/2122198064/O1CN01spOZzh29RN18VfThX_!!2122198064.jpg"
+        ]
+      },
+      "salesInfo": {
+        "soldText": "已售 3000+",
+        "soldCount": "3000+",
+        "invoiceAvailable": true,
+        "invoiceText": "可开发票",
+        "reviewHighlight": {
+          "count": 146,
+          "text": "质感很好"
+        },
+        "cartAddText": "超1万人加购"
+      },
+      "priceInfo": {
+        "currency": "CNY",
+        "unit": "￥",
+        "currentPrice": {
+          "title": "平台加补后",
+          "text": "73.86",
+          "amount": 7386,
+          "suffix": "起"
+        },
+        "originalPrice": {
+          "title": "优惠前",
+          "text": "84.9",
+          "amount": 8490,
+          "suffix": "起"
+        },
+        "campaign": {
+          "name": "狂暑季·超级爆款",
+          "endTimeText": "7月31日 24点",
+          "statusText": "结束"
+        }
+      },
+      "couponInfo": {
+        "items": [
+          {
+            "type": "officialDiscount",
+            "text": "官方立减12%省10.2元",
+            "discountRate": "12%",
+            "discountAmount": 1020
+          },
+          {
+            "type": "taoCoin",
+            "text": "淘金币已抵0.84元",
+            "discountRate": null,
+            "discountAmount": 84
+          }
+        ]
+      },
+      "rankingInfo": {
+        "text": "半身裙好评榜·第4名",
+        "category": "半身裙",
+        "type": "好评榜",
+        "rank": 4
+      },
+      "deliveryInfo": {
+        "estimatedDelivery": "预计后天送达",
+        "freight": "快递: 免运费",
+        "origin": "广东广州",
+        "destination": {
+          "city": "徐州市",
+          "district": "贾汪区"
+        },
+        "displayText": "广东广州 至 徐州市 贾汪区"
+      },
+      "guaranteeInfo": [
+        "大促价保",
+        "假一赔四",
+        "极速退款",
+        "7天无理由退换"
+      ],
+      "paymentInfo": [
+        "信用卡支付"
+      ]
+    },
+    "skuInfo": {
+      "properties": [
+        {
+          "propertyId": "1627207",
+          "propertyName": "颜色分类",
+          "displayModeToggleText": "切换大图模式",
+          "itemPropertyValues": [
+            {
+              "valueId": "788542710",
+              "value": "【灰色套装】",
+              "pic": "https://gw.alicdn.com/bao/uploaded/i3/2122198064/O1CN0161NMFF29RN18gEYEf_!!2122198064.jpg",
+              "badge": null
+            },
+            {
+              "valueId": "11564261376",
+              "value": "黑灰条纹上衣【单件】",
+              "pic": "https://gw.alicdn.com/bao/uploaded/i1/2122198064/O1CN01Vbq6w729RN13v3xSM_!!2122198064.jpg",
+              "badge": null
+            },
+            {
+              "valueId": "372257652",
+              "value": "灰色半裙【单件】",
+              "pic": "https://gw.alicdn.com/bao/uploaded/i4/2122198064/O1CN01KMkam329RN193ffCc_!!2122198064.jpg",
+              "badge": "千人加购"
+            }
+          ]
+        },
+        {
+          "propertyId": "20509",
+          "propertyName": "尺码",
+          "itemPropertyValues": [
+            {
+              "valueId": "21928573110",
+              "value": "40/45kg/S 【收藏加购 优先发货 退换无忧】",
+              "pic": null,
+              "badge": null
+            },
+            {
+              "valueId": "2563151494",
+              "value": "45/55kg/M 【收藏加购 优先发货 退换无忧】",
+              "pic": null,
+              "badge": null
+            },
+            {
+              "valueId": "22099083970",
+              "value": "55/60kg/L 【收藏加购 优先发货 退换无忧】",
+              "pic": null,
+              "badge": null
+            },
+            {
+              "valueId": "22099331201",
+              "value": "60/65kg/XL 【收藏加购 优先发货 退换无忧】",
+              "pic": null,
+              "badge": null
+            },
+            {
+              "valueId": "21928573114",
+              "value": "65/70kg/XXL 【收藏加购 优先发货 退换无忧】",
+              "pic": null,
+              "badge": null
+            }
+          ]
+        }
+      ],
+      "items": [
+        {
+          "skuId": "6258673726510",
+          "skuName": "【灰色套装】 / 40/45kg/S 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i3/2122198064/O1CN0161NMFF29RN18gEYEf_!!2122198064.jpg",
+          "finalSkuPrice": 15107,
+          "thirdOriginalDiscountPrice": 15107,
+          "valueList": [
+            "788542710",
+            "21928573110"
+          ],
+          "itemPrice": 17380,
+          "rate": null,
+          "finalPrice": 15107,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726511",
+          "skuName": "【灰色套装】 / 45/55kg/M 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i3/2122198064/O1CN0161NMFF29RN18gEYEf_!!2122198064.jpg",
+          "finalSkuPrice": 15107,
+          "thirdOriginalDiscountPrice": 15107,
+          "valueList": [
+            "788542710",
+            "2563151494"
+          ],
+          "itemPrice": 17380,
+          "rate": null,
+          "finalPrice": 15107,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726512",
+          "skuName": "【灰色套装】 / 55/60kg/L 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i3/2122198064/O1CN0161NMFF29RN18gEYEf_!!2122198064.jpg",
+          "finalSkuPrice": 15107,
+          "thirdOriginalDiscountPrice": 15107,
+          "valueList": [
+            "788542710",
+            "22099083970"
+          ],
+          "itemPrice": 17380,
+          "rate": null,
+          "finalPrice": 15107,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726513",
+          "skuName": "【灰色套装】 / 60/65kg/XL 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i3/2122198064/O1CN0161NMFF29RN18gEYEf_!!2122198064.jpg",
+          "finalSkuPrice": 15107,
+          "thirdOriginalDiscountPrice": 15107,
+          "valueList": [
+            "788542710",
+            "22099331201"
+          ],
+          "itemPrice": 17380,
+          "rate": null,
+          "finalPrice": 15107,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726514",
+          "skuName": "【灰色套装】 / 65/70kg/XXL 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i3/2122198064/O1CN0161NMFF29RN18gEYEf_!!2122198064.jpg",
+          "finalSkuPrice": 15107,
+          "thirdOriginalDiscountPrice": 15107,
+          "valueList": [
+            "788542710",
+            "21928573114"
+          ],
+          "itemPrice": 17380,
+          "rate": null,
+          "finalPrice": 15107,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726515",
+          "skuName": "黑灰条纹上衣【单件】 / 40/45kg/S 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i1/2122198064/O1CN01Vbq6w729RN13v3xSM_!!2122198064.jpg",
+          "finalSkuPrice": 7386,
+          "thirdOriginalDiscountPrice": 7386,
+          "valueList": [
+            "11564261376",
+            "21928573110"
+          ],
+          "itemPrice": 8490,
+          "rate": null,
+          "finalPrice": 7386,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726516",
+          "skuName": "黑灰条纹上衣【单件】 / 45/55kg/M 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i1/2122198064/O1CN01Vbq6w729RN13v3xSM_!!2122198064.jpg",
+          "finalSkuPrice": 7386,
+          "thirdOriginalDiscountPrice": 7386,
+          "valueList": [
+            "11564261376",
+            "2563151494"
+          ],
+          "itemPrice": 8490,
+          "rate": null,
+          "finalPrice": 7386,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726517",
+          "skuName": "黑灰条纹上衣【单件】 / 55/60kg/L 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i1/2122198064/O1CN01Vbq6w729RN13v3xSM_!!2122198064.jpg",
+          "finalSkuPrice": 7386,
+          "thirdOriginalDiscountPrice": 7386,
+          "valueList": [
+            "11564261376",
+            "22099083970"
+          ],
+          "itemPrice": 8490,
+          "rate": null,
+          "finalPrice": 7386,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726518",
+          "skuName": "黑灰条纹上衣【单件】 / 60/65kg/XL 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i1/2122198064/O1CN01Vbq6w729RN13v3xSM_!!2122198064.jpg",
+          "finalSkuPrice": 7386,
+          "thirdOriginalDiscountPrice": 7386,
+          "valueList": [
+            "11564261376",
+            "22099331201"
+          ],
+          "itemPrice": 8490,
+          "rate": null,
+          "finalPrice": 7386,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726519",
+          "skuName": "黑灰条纹上衣【单件】 / 65/70kg/XXL 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i1/2122198064/O1CN01Vbq6w729RN13v3xSM_!!2122198064.jpg",
+          "finalSkuPrice": 7386,
+          "thirdOriginalDiscountPrice": 7386,
+          "valueList": [
+            "11564261376",
+            "21928573114"
+          ],
+          "itemPrice": 8490,
+          "rate": null,
+          "finalPrice": 7386,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726520",
+          "skuName": "灰色半裙【单件】 / 40/45kg/S 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/2122198064/O1CN01KMkam329RN193ffCc_!!2122198064.jpg",
+          "finalSkuPrice": 8691,
+          "thirdOriginalDiscountPrice": 8691,
+          "valueList": [
+            "372257652",
+            "21928573110"
+          ],
+          "itemPrice": 9990,
+          "rate": null,
+          "finalPrice": 8691,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726521",
+          "skuName": "灰色半裙【单件】 / 45/55kg/M 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/2122198064/O1CN01KMkam329RN193ffCc_!!2122198064.jpg",
+          "finalSkuPrice": 8691,
+          "thirdOriginalDiscountPrice": 8691,
+          "valueList": [
+            "372257652",
+            "2563151494"
+          ],
+          "itemPrice": 9990,
+          "rate": null,
+          "finalPrice": 8691,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726522",
+          "skuName": "灰色半裙【单件】 / 55/60kg/L 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/2122198064/O1CN01KMkam329RN193ffCc_!!2122198064.jpg",
+          "finalSkuPrice": 8691,
+          "thirdOriginalDiscountPrice": 8691,
+          "valueList": [
+            "372257652",
+            "22099083970"
+          ],
+          "itemPrice": 9990,
+          "rate": null,
+          "finalPrice": 8691,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726523",
+          "skuName": "灰色半裙【单件】 / 60/65kg/XL 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/2122198064/O1CN01KMkam329RN193ffCc_!!2122198064.jpg",
+          "finalSkuPrice": 8691,
+          "thirdOriginalDiscountPrice": 8691,
+          "valueList": [
+            "372257652",
+            "22099331201"
+          ],
+          "itemPrice": 9990,
+          "rate": null,
+          "finalPrice": 8691,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        },
+        {
+          "skuId": "6258673726524",
+          "skuName": "灰色半裙【单件】 / 65/70kg/XXL 【收藏加购 优先发货 退换无忧】",
+          "skuPicUrl": "https://gw.alicdn.com/bao/uploaded/i4/2122198064/O1CN01KMkam329RN193ffCc_!!2122198064.jpg",
+          "finalSkuPrice": 8691,
+          "thirdOriginalDiscountPrice": 8691,
+          "valueList": [
+            "372257652",
+            "21928573114"
+          ],
+          "itemPrice": 9990,
+          "rate": null,
+          "finalPrice": 8691,
+          "multipleTag": null,
+          "priceDesc": null,
+          "stock": "200"
+        }
+      ],
+      "quantityInfo": {
+        "value": 1,
+        "minimum": 1,
+        "maximum": 5,
+        "purchaseLimit": 5,
+        "stockQuantity": 200,
+        "stockText": "有货(限购5件)",
+        "decrementEnabled": false,
+        "incrementEnabled": true
+      }
+    },
+    "detailPageInfo": {
+      "parameters": {
+        "highlighted": [
+          {
+            "name": "裙型",
+            "value": "A字裙"
+          },
+          {
+            "name": "面料",
+            "value": "棉,聚酯纤维"
+          },
+          {
+            "name": "领型",
+            "value": "圆领"
+          },
+          {
+            "name": "腰型",
+            "value": "高腰"
+          },
+          {
+            "name": "款式",
+            "value": "A字裙"
+          },
+          {
+            "name": "风格",
+            "value": "甜美"
+          },
+          {
+            "name": "版型",
+            "value": "标准"
+          }
+        ],
+        "basic": [
+          {
+            "name": "甜美",
+            "value": "日系"
+          },
+          {
+            "name": "吊牌价",
+            "value": "128元"
+          },
+          {
+            "name": "商场同款",
+            "value": "否"
+          },
+          {
+            "name": "材质成分",
+            "value": "棉50.0% 聚酯纤维40.0% 粘胶纤维(粘纤)10.0%"
+          },
+          {
+            "name": "适用季节",
+            "value": "夏季"
+          },
+          {
+            "name": "上市年份季节",
+            "value": "2026年夏季"
+          },
+          {
+            "name": "袖长",
+            "value": "短袖"
+          },
+          {
+            "name": "穿着方式",
+            "value": "套头"
+          },
+          {
+            "name": "适用场景",
+            "value": "日常"
+          },
+          {
+            "name": "廓形",
+            "value": "A型"
+          },
+          {
+            "name": "尺码",
+            "value": "40/45kg/S 45/55kg/M 55/60kg/L 60/65kg/XL 65/70kg/XXL"
+          },
+          {
+            "name": "颜色分类",
+            "value": "【灰色套装】 黑灰条纹上衣【单件】 灰色半裙【单件】"
+          },
+          {
+            "name": "品牌",
+            "value": "NIUVIES/纽汇"
+          },
+          {
+            "name": "袖型",
+            "value": "常规"
+          },
+          {
+            "name": "货号",
+            "value": "C5T65132+C5K65133"
+          },
+          {
+            "name": "适用年龄",
+            "value": "18-24周岁"
+          },
+          {
+            "name": "适用人群",
+            "value": "少女 女士"
+          },
+          {
+            "name": "组合形式",
+            "value": "两件套"
+          },
+          {
+            "name": "厚薄",
+            "value": "常规"
+          },
+          {
+            "name": "衣门襟",
+            "value": "套头"
+          }
+        ]
+      },
+      "sizeInfo": {
+        "recommendation": {
+          "buyerFitPercentage": 94,
+          "fitAssessment": "尺码标准",
+          "recommendedSize": "45/55kg/M"
+        },
+        "heightWeightGuide": {
+          "title": "身高体重对照表",
+          "unit": "厘米/公斤",
+          "headers": [
+            "身高/体重",
+            "40-45",
+            "45-55",
+            "55-60",
+            "60-65",
+            "65-70"
+          ],
+          "rows": [
+            [
+              "150-155",
+              "40/45kg/S",
+              "45/55kg/M",
+              "55/60kg/L",
+              "60/65kg/XL",
+              "65/70kg/XXL"
+            ],
+            [
+              "155-160",
+              "40/45kg/S",
+              "45/55kg/M",
+              "55/60kg/L",
+              "60/65kg/XL",
+              "65/70kg/XXL"
+            ],
+            [
+              "160-165",
+              "40/45kg/S",
+              "45/55kg/M",
+              "55/60kg/L",
+              "60/65kg/XL",
+              "65/70kg/XXL"
+            ]
+          ]
+        },
+        "sizeChart": {
+          "title": "尺寸表",
+          "unit": "厘米/公斤",
+          "headers": [
+            "尺码",
+            "身高",
+            "体重",
+            "肩宽",
+            "胸围"
+          ],
+          "rows": [
+            [
+              "40/45kg/S",
+              "150-160",
+              "40-45",
+              "37",
+              "80"
+            ],
+            [
+              "45/55kg/M",
+              "160-165",
+              "45-55",
+              "38",
+              "84"
+            ],
+            [
+              "55/60kg/L",
+              "160-168",
+              "55-60",
+              "39",
+              "88"
+            ]
+          ]
+        },
+        "buyerReferences": {
+          "title": "买家尺码参考",
+          "headers": [
+            "已购买家",
+            "身高·厘米",
+            "体重·公斤",
+            "已购"
+          ],
+          "rows": [
+            [
+              "闪**",
+              "162",
+              "60",
+              "45/55kg/M"
+            ],
+            [
+              "软**",
+              "160",
+              "63",
+              "45/55kg/M"
+            ],
+            [
+              "棉**",
+              "165",
+              "63",
+              "40/45kg/S"
+            ]
+          ]
+        },
+        "moreActionText": "查看完整尺码"
+      },
+      "imageTextInfo": {
+        "images": [
+          {
+            "index": 0,
+            "url": "https://img.alicdn.com/imgextra/i3/2122198064/O1CN01CxGeRD29RN1FL35gU_!!2122198064.jpg",
+            "width": 1500,
+            "height": 2400
+          },
+          {
+            "index": 1,
+            "url": "https://img.alicdn.com/imgextra/i3/2122198064/O1CN01LtPhP029RN1GQCAT1_!!2122198064.jpg",
+            "width": 1440,
+            "height": 1883
+          },
+          {
+            "index": 2,
+            "url": "https://img.alicdn.com/imgextra/i1/2122198064/O1CN01csTDJS29RN1IChz6b_!!2122198064.jpg",
+            "width": 1440,
+            "height": 1352
+          },
+          {
+            "index": 3,
+            "url": "https://img.alicdn.com/imgextra/i2/2122198064/O1CN01sSIJHY29RN1GV86n0_!!2122198064.jpg",
+            "width": 1440,
+            "height": 1526
+          },
+          {
+            "index": 4,
+            "url": "https://img.alicdn.com/imgextra/i1/2122198064/O1CN01PsdlFN29RN18ViQjE_!!2122198064.jpg",
+            "width": 750,
+            "height": 1028
+          },
+          {
+            "index": 5,
+            "url": "https://img.alicdn.com/imgextra/i1/2122198064/O1CN01NxCTkN29RN18JZ4hs_!!2122198064.jpg",
+            "width": 750,
+            "height": 1028
+          },
+          {
+            "index": 6,
+            "url": "https://img.alicdn.com/imgextra/i3/2122198064/O1CN01QyHQ8w29RN18Viy00_!!2122198064.jpg",
+            "width": 750,
+            "height": 1028
+          },
+          {
+            "index": 7,
+            "url": "https://img.alicdn.com/imgextra/i3/2122198064/O1CN01JnfSX129RN18aEVfG_!!2122198064.jpg",
+            "width": 750,
+            "height": 1028
+          },
+          {
+            "index": 8,
+            "url": "https://img.alicdn.com/imgextra/i3/O1CN01XU1Y2d1Sk7fIMOkeU_!!6000000002284-2-tps-1125-1446.png",
+            "width": 1125,
+            "height": 1446
+          }
+        ]
+      }
+    }
+  },
+  "recordTime": null
+}
