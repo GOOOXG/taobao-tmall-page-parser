@@ -63,6 +63,33 @@ parseTmallPage(page)
 
 三个入口使用同一套实现并返回同一协议。
 
+## 真实商品示例
+
+示例链接：
+
+```text
+https://detail.tmall.com/item.htm?abbucket=20&id=901024796701&mi_id=0000kX7BxrB4CXIxoB7dsZTV_42SCghic-HyHIjbL_poSpo&ns=1&skuId=5922764406788&spm=0.0.hoverItem.3&utparam=%7B%22aplus_abtest%22%3A%2229cfc55bf7b194d31865162b22e13ca2%22%7D&xxc=taobaoSearch
+```
+
+该结果由 `taobao-tmall-page-parser.mjs` 直接解析：
+
+```json
+{
+  "itemId": 901024796701,
+  "title": "红袖泡泡袖小清新连衣裙夏季新款女装【醒春集】收腰100%棉碎花裙",
+  "shopName": "红袖官方旗舰店",
+  "shopId": "66864024",
+  "skuCount": 12,
+  "media": ["videoCover", "video", "mainImages"],
+  "mainImageCount": 5,
+  "detailImageCount": 22,
+  "currentPriceText": "379",
+  "soldText": "已售 2000+"
+}
+```
+
+完整结构化结果：[examples/item-901024796701.json](examples/item-901024796701.json)
+
 ## 安全
 
 不要提交 Chrome 用户配置、Cookie、账号信息或抓取结果。建议使用只登录目标账号的独立 Chrome 配置。

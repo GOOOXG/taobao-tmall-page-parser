@@ -5,7 +5,8 @@
   "type": "module",
   "exports": "./taobao-tmall-page-parser.mjs",
   "files": [
-    "taobao-tmall-page-parser.mjs"
+    "taobao-tmall-page-parser.mjs",
+    "examples"
   ],
   "scripts": {
     "check": "node --check taobao-tmall-page-parser.mjs"

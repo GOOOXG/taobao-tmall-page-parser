@@ -1,5 +1,5 @@
 node_modules/
 .env
 .env.*
-item-*.json
-*-item-*.json
+/item-*.json
+/*-item-*.json
