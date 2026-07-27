@@ -173,9 +173,9 @@ $env:TAOBAO_CDP_URL = "http://127.0.0.1:9225"
 npm start
 ```
 
-## 八、公网使用时的 API Token
+## 八、API Token
 
-当服务通过 Cloudflare Tunnel 暴露到公网时，必须设置 `PARSER_API_TOKEN`。服务支持以下任一种请求头：
+设置 `PARSER_API_TOKEN` 后，`POST /parse` 必须携带相同的 Token。服务支持以下任一种请求头：
 
 ```text
 Authorization: Bearer <token>
@@ -197,61 +197,14 @@ $body = @{ itemId = "901024796701" } | ConvertTo-Json
 
 Invoke-RestMethod `
   -Method Post `
-  -Uri https://mjs.gooxg.com/parse `
+  -Uri http://127.0.0.1:3210/parse `
   -Headers @{ Authorization = "Bearer $token" } `
   -ContentType "application/json" `
   -Body $body `
   -TimeoutSec 300
 ```
 
-## 九、Cloudflare 固定域名与永久 Tunnel
-
-当前使用 Cloudflare 命名 Tunnel（永久隧道）：
-
-```text
-Tunnel 名称：taobao-tmall-parser
-Tunnel ID：  5a398e75-f807-4e30-ae11-b5fee3954add
-固定域名：  https://mjs.gooxg.com
-源站：      http://127.0.0.1:3210
-配置文件：  C:\tmp\taobao-parser-cloudflared\config.yml
-```
-
-域名路由已经绑定到该 Tunnel。命名 Tunnel 本身不会因为命令窗口关闭而删除，但本机必须有一个持续运行的 `cloudflared` 连接器，公网域名才会可用。
-
-手动启动连接器：
-
-```powershell
-& "C:\tmp\cloudflared\cloudflared.exe" `
-  tunnel `
-  --config "C:\tmp\taobao-parser-cloudflared\config.yml" `
-  run taobao-tmall-parser
-```
-
-查看 Tunnel 与连接器状态：
-
-```powershell
-& "C:\tmp\cloudflared\cloudflared.exe" `
-  tunnel info taobao-tmall-parser
-```
-
-当前连接器需要持续运行；本机目前使用手动启动命令运行，没有注册 Windows 服务或登录计划任务。若连接器进程结束，Tunnel 和域名绑定仍然保留，但公网请求会暂时无法到达本地 API。
-
-停止当前运行的连接器进程（不会删除 Tunnel 或域名绑定）：
-
-```powershell
-$processes = Get-CimInstance Win32_Process -Filter "Name = 'cloudflared.exe'" |
-  Where-Object { $_.CommandLine -like '*taobao-parser-cloudflared*' }
-
-$processes | ForEach-Object { Stop-Process -Id $_.ProcessId }
-```
-
-验证公网入口：
-
-```powershell
-Invoke-RestMethod https://mjs.gooxg.com/health
-```
-
-## 十、错误结果
+## 九、错误结果
 
 商品 ID 错误时返回 HTTP `400`：
 
@@ -266,6 +219,6 @@ Invoke-RestMethod https://mjs.gooxg.com/health
 
 Chrome 未启动或调试端口不可用时返回 HTTP `503`。商品页面加载失败时返回 HTTP `502`。
 
-## 十一、安全边界
+## 十、安全边界
 
 服务默认只监听本机 `127.0.0.1`，不配置 CORS，也不接受用户提供的任意 URL。不要将 `PARSER_HOST` 改为 `0.0.0.0` 暴露到局域网或公网。
