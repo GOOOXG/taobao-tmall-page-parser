@@ -8,6 +8,7 @@ const DEFAULT_PORT = 3210;
 const DEFAULT_CDP_URL = "http://127.0.0.1:9224";
 const MAX_BODY_BYTES = 16 * 1024;
 const ITEM_ID_PATTERN = /^\d{6,20}$/;
+const API_TOKEN = process.env.PARSER_API_TOKEN?.trim() || null;
 
 class ApiError extends Error {
   constructor(statusCode, message) {
@@ -42,6 +43,18 @@ function sendJson(response, statusCode, body) {
     "X-Content-Type-Options": "nosniff",
   });
   response.end(payload);
+}
+
+function assertApiToken(request) {
+  if (!API_TOKEN) return;
+  const authorization = request.headers.authorization || "";
+  const bearerToken = authorization.startsWith("Bearer ")
+    ? authorization.slice("Bearer ".length).trim()
+    : "";
+  const headerToken = request.headers["x-parser-token"] || "";
+  if (bearerToken !== API_TOKEN && headerToken !== API_TOKEN) {
+    throw new ApiError(401, "需要有效的 API Token");
+  }
 }
 
 async function readJsonBody(request) {
@@ -186,6 +199,7 @@ export function createParserServer({
     }
 
     try {
+      assertApiToken(request);
       const itemId = parseItemIdFromBody(await readJsonBody(request));
       const result = await enqueue(() => parseItem(itemId, { cdpUrl }));
       sendJson(response, 200, result);
