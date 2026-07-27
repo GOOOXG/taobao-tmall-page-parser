@@ -25,6 +25,10 @@ API 需要连接已经登录淘宝/天猫的 Chrome。使用独立 Chrome 配置
 
 首次启动时，在这个 Chrome 窗口中登录淘宝。之后会复用该配置中的登录状态。
 
+`--user-data-dir` 是 Chrome 的独立用户数据目录，用来保存 Cookie、登录状态、缓存和浏览记录；它不是项目代码目录。建议继续使用 `C:\tmp\taobao-parser-profile`，不要改成 `http-api` 项目目录，避免账号数据混入源码、依赖和 Git 文件。
+
+如果确实要放在项目附近，也必须使用单独的子目录，例如 `http-api\chrome-profile`，并将该目录加入 `.gitignore`；不要直接使用 `http-api` 本身。
+
 确认调试端口正常：
 
 ```powershell
