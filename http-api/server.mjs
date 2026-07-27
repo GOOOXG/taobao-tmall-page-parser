@@ -20,7 +20,7 @@ const ROUTES = new Map([
 export function parseItemIdFromBody(body) {
   const itemId = String(body?.itemId ?? "").trim();
   if (!ITEM_ID_PATTERN.test(itemId)) {
-    throw new ApiError(400, "?? ID ?????????? 6 ? 20 ???");
+    throw new ApiError(400, "商品 ID 格式不正确，只能输入 6 至 20 位数字");
   }
   return itemId;
 }
@@ -28,7 +28,7 @@ export function parseItemIdFromBody(body) {
 export function serializeError(error) {
   return {
     code: 1,
-    message: error instanceof Error ? error.message : "????",
+    message: error instanceof Error ? error.message : "解析失败",
     data: null,
     recordTime: null,
   };
@@ -82,17 +82,17 @@ function sendHtml(response, html) {
 
 function renderLoginPage(status) {
   const authenticated = status.state === "authenticated";
-  const initialText = authenticated ? "?????" : "????";
+  const initialText = authenticated ? "账号已登录" : "等待扫码";
   const qrMarkup = authenticated
     ? ""
-    : '<div class="qr"><img id="qr" src="/login/qrcode" alt="???????"></div><button id="refresh" type="button">?????</button>';
+    : '<div class="qr"><img id="qr" src="/login/qrcode" alt="淘宝登录二维码"></div><button id="refresh" type="button">刷新二维码</button>';
 
   return `<!doctype html>
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>??????</title>
+  <title>淘宝账号登录</title>
   <style>
     * { box-sizing: border-box; }
     body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f4f5f6; color: #17191c; font-family: Arial, "Microsoft YaHei", sans-serif; }
@@ -109,8 +109,8 @@ function renderLoginPage(status) {
 </head>
 <body>
   <main>
-    <h1>??????</h1>
-    <p>??????????????????????????</p>
+    <h1>淘宝账号登录</h1>
+    <p>使用手机淘宝扫描二维码。登录状态将保存在当前服务器。</p>
     <div id="status" class="${authenticated ? "authenticated" : ""}">${initialText}</div>
     <div id="login-area">${qrMarkup}</div>
   </main>
@@ -129,14 +129,14 @@ function renderLoginPage(status) {
         const response = await fetch("/login/status", { cache: "no-store" });
         const result = await response.json();
         if (result.data?.state === "authenticated") {
-          statusElement.textContent = "?????????????";
+          statusElement.textContent = "登录成功，账号状态已持久化";
           statusElement.classList.add("authenticated");
           loginArea.hidden = true;
           return;
         }
-        statusElement.textContent = "????";
+        statusElement.textContent = "等待扫码";
       } catch {
-        statusElement.textContent = "????????????";
+        statusElement.textContent = "状态检查失败，请刷新页面";
       }
       setTimeout(checkStatus, 2000);
     }
@@ -151,7 +151,7 @@ function renderLoginPage(status) {
 async function readJsonBody(request) {
   const contentType = request.headers["content-type"] || "";
   if (!contentType.toLowerCase().startsWith("application/json")) {
-    throw new ApiError(415, "Content-Type ??? application/json");
+    throw new ApiError(415, "Content-Type 必须是 application/json");
   }
 
   let size = 0;
@@ -160,7 +160,7 @@ async function readJsonBody(request) {
     size += chunk.length;
     if (size > MAX_BODY_BYTES) {
       request.resume();
-      throw new ApiError(413, "??????? 16 KB");
+      throw new ApiError(413, "请求体不能超过 16 KB");
     }
     chunks.push(chunk);
   }
@@ -169,7 +169,7 @@ async function readJsonBody(request) {
     const text = Buffer.concat(chunks).toString("utf8").replace(/^\uFEFF/, "");
     return JSON.parse(text);
   } catch {
-    throw new ApiError(400, "??????? JSON");
+    throw new ApiError(400, "请求体不是有效 JSON");
   }
 }
 
@@ -195,7 +195,7 @@ async function loadItemPage(page, itemId) {
         () => window.__ICE_APP_CONTEXT__.loaderData.home.data.res.item.itemId,
       );
       if (String(runtimeItemId) !== itemId) {
-        throw new Error(`???? ID ${runtimeItemId} ??? ID ${itemId} ???`);
+        throw new Error(`页面商品 ID ${runtimeItemId} 与输入 ID ${itemId} 不一致`);
       }
       return;
     } catch (error) {
@@ -205,7 +205,7 @@ async function loadItemPage(page, itemId) {
 
   throw new ApiError(
     502,
-    `?????????${errors.at(-1) || "?????????"}`,
+    `商品页面加载失败：${errors.at(-1) || "没有读取到商品数据"}`,
   );
 }
 
@@ -260,14 +260,14 @@ export function createParserServer({
     const expectedMethod = ROUTES.get(url.pathname);
 
     if (!expectedMethod) {
-      sendJson(response, 404, serializeError(new Error("?????")));
+      sendJson(response, 404, serializeError(new Error("接口不存在")));
       return;
     }
     if (request.method !== expectedMethod) {
       sendJson(
         response,
         405,
-        serializeError(new Error(`??? ${expectedMethod} ${url.pathname}`)),
+        serializeError(new Error(`仅支持 ${expectedMethod} ${url.pathname}`)),
       );
       return;
     }

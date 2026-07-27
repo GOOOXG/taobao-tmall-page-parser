@@ -8,13 +8,13 @@ export function parseBoolean(value, fallback) {
   const normalized = String(value).trim().toLowerCase();
   if (["1", "true", "yes", "on"].includes(normalized)) return true;
   if (["0", "false", "no", "off"].includes(normalized)) return false;
-  throw new Error(`????????${value}`);
+  throw new Error(`布尔配置值无效：${value}`);
 }
 
 function parsePort(value) {
   const port = Number(value || DEFAULT_PORT);
   if (!Number.isInteger(port) || port < 1 || port > 65_535) {
-    throw new Error(`PARSER_PORT ???${value}`);
+    throw new Error(`PARSER_PORT 无效：${value}`);
   }
   return port;
 }
@@ -22,7 +22,7 @@ function parsePort(value) {
 export function loadRuntimeConfig(env = process.env) {
   const mode = String(env.PARSER_BROWSER_MODE || "cdp").trim().toLowerCase();
   if (!BROWSER_MODES.has(mode)) {
-    throw new Error("PARSER_BROWSER_MODE ??? cdp ? managed");
+    throw new Error("PARSER_BROWSER_MODE 只能是 cdp 或 managed");
   }
 
   const browser =
@@ -40,7 +40,7 @@ export function loadRuntimeConfig(env = process.env) {
         };
 
   if (mode === "managed" && !browser.profileDir) {
-    throw new Error("managed ?????? PARSER_CHROME_PROFILE_DIR");
+    throw new Error("managed 模式必须设置 PARSER_CHROME_PROFILE_DIR");
   }
 
   return {

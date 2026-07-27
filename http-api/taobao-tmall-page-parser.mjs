@@ -9,11 +9,11 @@ export async function parseCorePageData(page) {
     const seller = response.seller || {};
     const store = response.componentsVO?.storeCardVO || {};
     const labels = (store.labelList || []).map((item) => item.contentDesc);
-    const favorableText = labels.find((text) => text.includes("???"));
-    const shippingText = labels.find((text) => text.includes("??"));
-    const serviceText = labels.find((text) => text.includes("?????"));
-    const favorableMatch = favorableText?.match(/^(.*?)???([\d.]+)%$/);
-    const shippingMatch = shippingText?.match(/??(.+?)??/);
+    const favorableText = labels.find((text) => text.includes("好评率"));
+    const shippingText = labels.find((text) => text.includes("发货"));
+    const serviceText = labels.find((text) => text.includes("客服满意度"));
+    const favorableMatch = favorableText?.match(/^(.*?)好评率([\d.]+)%$/);
+    const shippingMatch = shippingText?.match(/平均(.+?)发货/);
     const serviceMatch = serviceText?.match(/([\d.]+)%/);
 
     const shopInfo = {
@@ -100,7 +100,7 @@ export async function parseCorePageData(page) {
       propertyId: String(property.pid),
       propertyName: property.name,
       ...(property.bigImageMode === "true"
-        ? { displayModeToggleText: "??????" }
+        ? { displayModeToggleText: "切换大图模式" }
         : {}),
       itemPropertyValues: (property.values || []).map((value) => ({
         valueId: String(value.vid),
@@ -150,7 +150,7 @@ export async function parseCommerceData(page) {
           .filter(Boolean)
       : [];
     const soldCount = response.item?.vagueSellCount;
-    const invoiceText = subtitleTexts.find((text) => text === "????");
+    const invoiceText = subtitleTexts.find((text) => text === "可开发票");
     const endorsements = components.itemEndorseVO?.endorseList || [];
     const reviewText = endorsements
       .find((item) => item.type === "itemRate")
@@ -158,9 +158,9 @@ export async function parseCommerceData(page) {
     const cartAddText = endorsements
       .find((item) => item.type === "itemAddCart")
       ?.textList?.[0];
-    const reviewMatch = reviewText?.match(/^(\d+)???["?](.+?)["?]$/);
+    const reviewMatch = reviewText?.match(/^(\d+)人评价["“](.+?)["”]$/);
     const salesInfo = {
-      ...(soldCount ? { soldText: `?? ${soldCount}`, soldCount } : {}),
+      ...(soldCount ? { soldText: `已售 ${soldCount}`, soldCount } : {}),
       ...(invoiceText
         ? { invoiceAvailable: true, invoiceText }
         : { invoiceAvailable: false }),
@@ -183,7 +183,7 @@ export async function parseCommerceData(page) {
     if (currentSource || originalSource) {
       const priceInfo = {
         currency: "CNY",
-        unit: currentSource?.priceUnit || originalSource?.priceUnit || "?",
+        unit: currentSource?.priceUnit || originalSource?.priceUnit || "￥",
       };
       if (currentSource) {
         priceInfo.currentPrice = {
@@ -223,14 +223,14 @@ export async function parseCommerceData(page) {
     }
 
     const couponSection = (components.extensionInfoVO?.infos || []).find(
-      (section) => section.title === "??" || section.type?.includes("COUPON"),
+      (section) => section.title === "优惠" || section.type?.includes("COUPON"),
     );
     const couponItems = (couponSection?.items || [])
       .map((item) => item.text?.[0])
       .filter(Boolean)
       .map((text) => {
-        const official = text.match(/^????([^?]+)?([\d.]+)?$/);
-        const taoCoin = text.match(/^?????([\d.]+)?$/);
+        const official = text.match(/^官方立减([^省]+)省([\d.]+)元$/);
+        const taoCoin = text.match(/^淘金币已抵([\d.]+)元$/);
         if (official) {
           return {
             type: "officialDiscount",
@@ -415,7 +415,7 @@ export async function parseDetailPageData(page) {
       if (sizeRoot.sizeRecommend?.titleTail) {
         sizeInfo.recommendation = {
           buyerFitPercentage: Number(sizeRoot.sizeRecommend.commentRatio),
-          fitAssessment: "????",
+          fitAssessment: "尺码标准",
           recommendedSize: sizeRoot.sizeRecommend.titleTail,
         };
       }

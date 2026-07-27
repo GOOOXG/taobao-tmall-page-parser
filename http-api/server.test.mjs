@@ -104,7 +104,7 @@ test("login routes expose the page, status, QR image, and logout", async () => {
       assert.equal(loginResponse.status, 200);
       assert.match(loginResponse.headers.get("content-type"), /text\/html/);
       const loginHtml = await loginResponse.text();
-      assert.match(loginHtml, /??????/);
+      assert.match(loginHtml, /淘宝账号登录/);
       assert.match(loginHtml, /src="\/login\/qrcode"/);
       assert.match(loginHtml, /fetch\("\/login\/status"/);
 

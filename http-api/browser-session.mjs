@@ -62,7 +62,7 @@ export class BrowserSession {
           this.cdpBrowserPromise = null;
           throw new ApiError(
             503,
-            `???? Chrome CDP?${error.message}`,
+            `无法连接 Chrome CDP：${error.message}`,
           );
         });
     }
@@ -70,7 +70,7 @@ export class BrowserSession {
     const browser = await this.cdpBrowserPromise;
     const context = browser.contexts()[0];
     if (!context) {
-      throw new ApiError(503, "??????? Chrome ??????");
+      throw new ApiError(503, "没有找到可用的 Chrome 浏览器上下文");
     }
     return context;
   }
@@ -99,7 +99,7 @@ export class BrowserSession {
         })
         .catch((error) => {
           this.managedContextPromise = null;
-          throw new ApiError(503, `?????? Chromium?${error.message}`);
+          throw new ApiError(503, `无法启动托管 Chromium：${error.message}`);
         });
     }
     return this.managedContextPromise;
@@ -145,7 +145,7 @@ export class BrowserSession {
       });
       await this.loginPage.waitForTimeout(1_500);
     } catch (error) {
-      throw new ApiError(502, `??????????${error.message}`);
+      throw new ApiError(502, `淘宝登录页加载失败：${error.message}`);
     }
 
     return {
@@ -158,7 +158,7 @@ export class BrowserSession {
 
   async getLoginScreenshot() {
     if (!this.loginPage || this.loginPage.isClosed()) {
-      throw new ApiError(409, "???? GET /login ??????");
+      throw new ApiError(409, "请先访问 GET /login 创建登录会话");
     }
 
     for (const frame of this.loginPage.frames()) {
