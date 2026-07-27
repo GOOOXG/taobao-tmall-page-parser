@@ -323,7 +323,6 @@ function executeScript() {
         itemId: Number(item.itemId),
         title: item.title || null,
         itemPic: images[0] || null,
-        images: images,
         media: media
       },
       skuInfo: {
