@@ -6,6 +6,7 @@
 mjs-parser/   默认 MJS 页面解析库
 http-api/     使用独立 MJS 的本机/服务器 Node HTTP API
 mjs-docker/   自包含 Chromium 的 Docker 部署
+八爪鱼RPA/   零第三方依赖、连接现有 Chrome 的 Python RPA 版本
 ```
 
 ## 默认解析库
@@ -25,3 +26,9 @@ mjs-docker/   自包含 Chromium 的 Docker 部署
 ## Docker
 
 容器部署入口：[mjs-docker/README.md](mjs-docker/README.md)
+
+## 八爪鱼 RPA
+
+Python 入口：[八爪鱼RPA/main.py](八爪鱼RPA/main.py)
+
+CDP 开启、校验和节点配置：[八爪鱼RPA/README.md](八爪鱼RPA/README.md)
