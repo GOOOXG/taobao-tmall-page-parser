@@ -87,14 +87,6 @@ https://www.taobao.com/
 True
 ```
 
-### 步骤2返回 False
-
-步骤2仍保持布尔返回值。启动失败时会同时打印错误，并把完整原因保存到：
-
-```text
-%TEMP%\taobao-rpa-cdp-start-error.txt
-```
-
 ## 步骤3：解析商品
 
 打开 [main.py](main.py)，将完整代码粘贴到八爪鱼“执行Python代码”节点。

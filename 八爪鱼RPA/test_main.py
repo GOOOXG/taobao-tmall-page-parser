@@ -122,26 +122,6 @@ class RpaParserTests(unittest.TestCase):
         self.assertIn("https://www.taobao.com/", args)
         self.assertTrue(any(value.startswith("--user-data-dir=") for value in args))
 
-    def test_start_step_records_a_diagnostic_when_chrome_is_missing(self):
-        original_endpoint = START_MODULE._cdp_endpoint
-        original_find = START_MODULE._find_chrome
-        original_error_file = START_MODULE._error_file
-        try:
-            with tempfile.TemporaryDirectory() as directory:
-                error_file = pathlib.Path(directory) / "start-error.txt"
-                START_MODULE._cdp_endpoint = lambda: None
-                START_MODULE._find_chrome = lambda: None
-                START_MODULE._error_file = lambda: error_file
-                self.assertIs(START_MODULE.main(), False)
-                self.assertIn(
-                    "Chrome was not found",
-                    error_file.read_text(encoding="utf-8"),
-                )
-        finally:
-            START_MODULE._cdp_endpoint = original_endpoint
-            START_MODULE._find_chrome = original_find
-            START_MODULE._error_file = original_error_file
-
     def test_rpa_entry_is_main_with_item_id_parameter(self):
         self.assertEqual(list(inspect.signature(MODULE.main).parameters), ["itemId"])
 

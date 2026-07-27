@@ -3,9 +3,7 @@ import os
 import pathlib
 import shutil
 import subprocess
-import tempfile
 import time
-import traceback
 import urllib.parse
 import urllib.request
 
@@ -75,24 +73,6 @@ def _find_chrome():
     return None
 
 
-def _error_file():
-    return pathlib.Path(tempfile.gettempdir()) / "taobao-rpa-cdp-start-error.txt"
-
-
-def _clear_error():
-    try:
-        _error_file().unlink()
-    except FileNotFoundError:
-        pass
-
-
-def _record_error(message):
-    try:
-        _error_file().write_text(str(message), encoding="utf-8")
-    except Exception:
-        pass
-
-
 def _open_taobao(endpoint):
     query = urllib.parse.quote(TAOBAO_URL, safe="")
     request = urllib.request.Request(endpoint + "/json/new?" + query, method="PUT")
@@ -103,7 +83,6 @@ def _open_taobao(endpoint):
 
 def main():
     """启动带动态 CDP 的 Chrome 并打开淘宝，成功返回 True。"""
-    _clear_error()
     try:
         endpoint = _cdp_endpoint()
         if endpoint:
@@ -153,8 +132,5 @@ def main():
                 chrome, profile, process.poll()
             )
         )
-    except Exception as error:
-        detail = "{0}\n\n{1}".format(error, traceback.format_exc())
-        _record_error(detail)
-        print("Chrome CDP start failed: {0}".format(error))
+    except Exception:
         return False
