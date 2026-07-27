@@ -332,17 +332,6 @@ DETAIL_SCRIPT = r"""() => {
       url?.startsWith("//") ? `https:${url}` : url || null;
     const result = {};
 
-    const rate = response.componentsVO?.rateVO;
-    if (rate) {
-      const reviewInfo = {
-        ...(rate.totalCount ? { totalCount: rate.totalCount } : {}),
-        ...(rate.favorableRate?.rateText
-          ? { favorableRateText: rate.favorableRate.rateText }
-          : {}),
-      };
-      if (Object.keys(reviewInfo).length > 0) result.reviewInfo = reviewInfo;
-    }
-
     const parameterSource = response.plusViewVO?.industryParamVO;
     const highlighted = (parameterSource?.enhanceParamList || []).map((item) => ({
       name: item.propertyName,

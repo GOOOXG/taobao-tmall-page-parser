@@ -80,9 +80,7 @@ test("returns a non-empty JSON string with the required data order", () => {
   assert.equal(result.data.spuInfo.priceInfo.originalPrice.amount, 59.9);
   assert.equal(result.data.spuInfo.couponInfo.items[0].discountAmount, 10.2);
   assert.equal("sectionOrder" in result.data.detailPageInfo, false);
-  assert.equal(result.data.detailPageInfo.reviewInfo.totalCount, "100+");
-  assert.equal("keywords" in result.data.detailPageInfo.reviewInfo, false);
-  assert.equal("samples" in result.data.detailPageInfo.reviewInfo, false);
+  assert.equal("reviewInfo" in result.data.detailPageInfo, false);
 });
 
 test("returns an error JSON string instead of an empty value when page data is unavailable", () => {

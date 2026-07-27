@@ -472,14 +472,6 @@ function executeScript() {
 
   function parseDetailPageData(response) {
     var result = {};
-    var rate = getPath(response, ["componentsVO", "rateVO"]);
-    if (rate) {
-      var reviewInfo = {};
-      if (rate.totalCount) reviewInfo.totalCount = rate.totalCount;
-      if (getPath(rate, ["favorableRate", "rateText"])) reviewInfo.favorableRateText = rate.favorableRate.rateText;
-      if (Object.keys(reviewInfo).length) result.reviewInfo = reviewInfo;
-    }
-
     var parameterSource = getPath(response, ["plusViewVO", "industryParamVO"]);
     var highlighted = asArray(parameterSource && parameterSource.enhanceParamList).map(function (item) {
       return { name: item.propertyName, value: item.valueName };
