@@ -1,4 +1,50 @@
-# 八爪鱼 RPA Python 版本
+# 八爪鱼 RPA
+
+## 当前商品页 JavaScript 版（推荐）
+
+该方式不使用商品 ID、不使用 CDP，也不需要安装 Python 包。先由八爪鱼打开淘宝或天猫商品详情页，再在当前商品页执行 JavaScript。
+
+使用文件：[页面JS解析.js](页面JS解析.js)
+
+八爪鱼节点配置：
+
+```text
+节点：在网页上执行JavaScript函数
+执行函数：executeScript
+输入参数：无
+结果保存至：文本变量，例如 productJson
+```
+
+操作步骤：
+
+1. 在八爪鱼流程中打开淘宝或天猫商品详情页。
+2. 等待商品标题、主图和 SKU 区域加载完成。
+3. 需要完整图文详情时，先滚动到详情页底部，让懒加载图片进入页面。
+4. 新增“在网页上执行JavaScript函数”节点。
+5. 将 `页面JS解析.js` 的完整内容粘贴到节点中。
+6. 执行函数填写 `executeScript`，将结果保存为文本变量。
+
+函数始终返回 JSON 字符串，因为八爪鱼的网页 JavaScript 节点对复杂 JavaScript 对象的返回支持不稳定。成功结果示例：
+
+```json
+{"code":0,"message":null,"data":{"shopInfo":{},"spuInfo":{},"skuInfo":{},"detailPageInfo":{}},"recordTime":null}
+```
+
+输出顺序保持：
+
+```text
+shopInfo -> spuInfo -> skuInfo -> detailPageInfo
+```
+
+如果当前页面不是已加载完成的商品详情页，函数仍会返回非空的错误 JSON：
+
+```json
+{"code":1,"message":"未读取到商品数据。请确认当前是已加载完成的淘宝或天猫商品详情页，然后重新执行。","data":null,"recordTime":null}
+```
+
+注意：保存结果的变量必须使用文本/字符串类型，不要配置为布尔值或数字。若后续节点需要访问具体字段，先把 `productJson` 按 JSON 解析，再读取 `data.shopInfo`、`data.spuInfo` 等字段。
+
+## Python CDP 版本
 
 该版本不安装任何第三方 Python 包，按三个步骤使用：
 
