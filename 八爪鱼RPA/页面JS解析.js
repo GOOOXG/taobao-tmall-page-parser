@@ -484,27 +484,6 @@ function executeScript() {
       var reviewInfo = {};
       if (rate.totalCount) reviewInfo.totalCount = rate.totalCount;
       if (getPath(rate, ["favorableRate", "rateText"])) reviewInfo.favorableRateText = rate.favorableRate.rateText;
-      var keywords = asArray(rate.keywords).map(function (keyword) {
-        return { text: keyword.title, count: Number(keyword.count || 0) };
-      });
-      if (keywords.length) reviewInfo.keywords = keywords;
-      var samples = asArray(getPath(rate, ["group", "items"])).map(function (review) {
-        var sample = {
-          userName: review.userName,
-          date: review.dateTime,
-          content: review.content,
-          media: asArray(review.media).map(function (media) {
-            var output = { type: media.type };
-            if (media.imageUrl) output.imageUrl = normalizeUrl(media.imageUrl);
-            if (media.videoUrl) output.videoUrl = normalizeUrl(media.videoUrl);
-            return output;
-          })
-        };
-        if (review.skuInfo) sample.skuInfo = review.skuInfo;
-        if (review.repurchaseCountText) sample.repurchaseText = review.repurchaseCountText;
-        return sample;
-      });
-      if (samples.length) reviewInfo.samples = samples;
       if (Object.keys(reviewInfo).length) result.reviewInfo = reviewInfo;
     }
 

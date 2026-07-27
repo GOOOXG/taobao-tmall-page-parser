@@ -42,6 +42,14 @@ test("returns a non-empty JSON string with the required data order", () => {
       },
     },
     componentsVO: {
+      rateVO: {
+        totalCount: "100+",
+        favorableRate: { rateText: "好评率99%" },
+        keywords: [{ title: "质量好", count: 10 }],
+        group: {
+          items: [{ userName: "用户", content: "评价内容", media: [] }],
+        },
+      },
       priceVO: {
         price: { priceMoney: "5990" },
         extraPrice: { priceMoney: "4750" },
@@ -65,6 +73,9 @@ test("returns a non-empty JSON string with the required data order", () => {
   assert.equal(result.data.spuInfo.priceInfo.currentPrice.amount, 47.5);
   assert.equal(result.data.spuInfo.priceInfo.originalPrice.amount, 59.9);
   assert.equal(result.data.spuInfo.couponInfo.items[0].discountAmount, 10.2);
+  assert.equal(result.data.detailPageInfo.reviewInfo.totalCount, "100+");
+  assert.equal("keywords" in result.data.detailPageInfo.reviewInfo, false);
+  assert.equal("samples" in result.data.detailPageInfo.reviewInfo, false);
 });
 
 test("returns an error JSON string instead of an empty value when page data is unavailable", () => {

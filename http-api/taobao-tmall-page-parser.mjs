@@ -332,31 +332,7 @@ export async function parseDetailPageData(page) {
         ...(rate.favorableRate?.rateText
           ? { favorableRateText: rate.favorableRate.rateText }
           : {}),
-        keywords: (rate.keywords || []).map((keyword) => ({
-          text: keyword.title,
-          count: Number(keyword.count || 0),
-        })),
-        samples: (rate.group?.items || []).map((review) => ({
-          userName: review.userName,
-          date: review.dateTime,
-          content: review.content,
-          ...(review.skuInfo ? { skuInfo: review.skuInfo } : {}),
-          ...(review.repurchaseCountText
-            ? { repurchaseText: review.repurchaseCountText }
-            : {}),
-          media: (review.media || []).map((media) => ({
-            type: media.type,
-            ...(media.imageUrl
-              ? { imageUrl: normalizeUrl(media.imageUrl) }
-              : {}),
-            ...(media.videoUrl
-              ? { videoUrl: normalizeUrl(media.videoUrl) }
-              : {}),
-          })),
-        })),
       };
-      if (reviewInfo.keywords.length === 0) delete reviewInfo.keywords;
-      if (reviewInfo.samples.length === 0) delete reviewInfo.samples;
       if (Object.keys(reviewInfo).length > 0) result.reviewInfo = reviewInfo;
     }
 
