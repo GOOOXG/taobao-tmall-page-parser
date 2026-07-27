@@ -31,8 +31,25 @@ test("returns a non-empty JSON string with the required data order", () => {
       props: [{ pid: 1, name: "颜色", values: [{ vid: 2, name: "黑色", image: "//img.example/black.jpg" }] }],
       skus: [{ skuId: 3, propPath: "1:2" }],
     },
-    skuCore: { sku2info: { 0: { quantity: 9 }, 3: { quantity: 4, price: { priceMoney: "99" } } } },
-    componentsVO: {},
+    skuCore: {
+      sku2info: {
+        0: { quantity: 9 },
+        3: {
+          quantity: 4,
+          price: { priceMoney: "5990" },
+          subPrice: { priceMoney: "4750" },
+        },
+      },
+    },
+    componentsVO: {
+      priceVO: {
+        price: { priceMoney: "5990" },
+        extraPrice: { priceMoney: "4750" },
+      },
+      extensionInfoVO: {
+        infos: [{ title: "优惠", items: [{ text: ["官方立减12%省10.2元"] }] }],
+      },
+    },
   });
 
   const raw = vm.runInContext("executeScript()", context);
@@ -43,6 +60,11 @@ test("returns a non-empty JSON string with the required data order", () => {
   assert.deepEqual(Object.keys(result.data), ["shopInfo", "spuInfo", "skuInfo", "detailPageInfo"]);
   assert.equal(result.data.spuInfo.itemId, 901024796701);
   assert.equal(result.data.skuInfo.items[0].skuId, "3");
+  assert.equal(result.data.skuInfo.items[0].finalSkuPrice, 47.5);
+  assert.equal(result.data.skuInfo.items[0].itemPrice, 59.9);
+  assert.equal(result.data.spuInfo.priceInfo.currentPrice.amount, 47.5);
+  assert.equal(result.data.spuInfo.priceInfo.originalPrice.amount, 59.9);
+  assert.equal(result.data.spuInfo.couponInfo.items[0].discountAmount, 10.2);
 });
 
 test("returns an error JSON string instead of an empty value when page data is unavailable", () => {

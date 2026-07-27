@@ -50,6 +50,11 @@ function executeScript() {
     return String(url).indexOf("//") === 0 ? "https:" + url : String(url);
   }
 
+  function moneyToYuan(value) {
+    var amountInCents = Number(value);
+    return Number.isFinite(amountInCents) ? amountInCents / 100 : 0;
+  }
+
   function getPath(value, path) {
     var current = value;
     for (var index = 0; index < path.length; index += 1) {
@@ -261,8 +266,8 @@ function executeScript() {
       }).filter(Boolean);
       var values = valueIds.map(function (valueId) { return valueMap[String(valueId)]; });
       var info = sku2info[sku.skuId] || {};
-      var originalPrice = Number(getPath(info, ["price", "priceMoney"]) || 0);
-      var currentPrice = Number(
+      var originalPrice = moneyToYuan(getPath(info, ["price", "priceMoney"]) || 0);
+      var currentPrice = moneyToYuan(
         getPath(info, ["subPrice", "priceMoney"]) ||
         getPath(info, ["price", "priceMoney"]) || 0
       );
@@ -372,7 +377,7 @@ function executeScript() {
         priceInfo.currentPrice = {
           title: currentSource.priceTitle || null,
           text: currentSource.priceText || null,
-          amount: Number(currentSource.priceMoney || 0)
+          amount: moneyToYuan(currentSource.priceMoney || 0)
         };
         if (currentSource.priceDesc) priceInfo.currentPrice.suffix = currentSource.priceDesc;
       }
@@ -380,7 +385,7 @@ function executeScript() {
         priceInfo.originalPrice = {
           title: originalSource.priceTitle || null,
           text: originalSource.priceText || null,
-          amount: Number(originalSource.priceMoney || 0)
+          amount: moneyToYuan(originalSource.priceMoney || 0)
         };
         if (originalSource.priceDesc) priceInfo.originalPrice.suffix = originalSource.priceDesc;
       }
@@ -408,7 +413,7 @@ function executeScript() {
           type: "officialDiscount",
           text: text,
           discountRate: official[1],
-          discountAmount: Math.round(Number(official[2]) * 100)
+          discountAmount: Number(official[2])
         };
       }
       if (taoCoin) {
@@ -416,7 +421,7 @@ function executeScript() {
           type: "taoCoin",
           text: text,
           discountRate: null,
-          discountAmount: Math.round(Number(taoCoin[1]) * 100)
+          discountAmount: Number(taoCoin[1])
         };
       }
       return { type: "other", text: text };
