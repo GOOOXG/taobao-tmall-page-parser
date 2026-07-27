@@ -1,4 +1,5 @@
 import base64
+import concurrent.futures
 import hashlib
 import json
 import os
@@ -735,8 +736,8 @@ def _read_chromium_processes() -> List[Dict[str, Any]]:
         return []
     command = (
         "[Console]::OutputEncoding=[Text.UTF8Encoding]::new($false);"
-        "$items=Get-CimInstance Win32_Process | "
-        "Where-Object {$_.Name -in @('chrome.exe','msedge.exe','chromium.exe')} | "
+        "$items=Get-CimInstance Win32_Process -Filter "
+        "\"Name='chrome.exe' OR Name='msedge.exe' OR Name='chromium.exe'\" | "
         "Select-Object ProcessId,Name,CommandLine;"
         "@($items)|ConvertTo-Json -Compress"
     )
@@ -834,9 +835,21 @@ def _probe_cdp_port(
 
 def _discover_cdp_endpoint() -> str:
     ports: Dict[int, str] = {}
-    for port, process_name, profile_dir in _extract_process_candidates(
-        _read_chromium_processes()
-    ):
+    known_profile = os.environ.get("TAOBAO_RPA_PROFILE", "").strip()
+    if not known_profile:
+        known_profile = str(
+            pathlib.Path(os.environ.get("LOCALAPPDATA", ""))
+            / "TaobaoRPA"
+            / "ChromeProfile"
+        )
+    known_port = _port_from_active_file(known_profile)
+    if known_port:
+        known_browser = _probe_cdp_port(known_port, "chrome.exe")
+        if known_browser:
+            return known_browser["endpoint"]
+
+    processes = _read_chromium_processes()
+    for port, process_name, profile_dir in _extract_process_candidates(processes):
         actual_port = port or _port_from_active_file(profile_dir)
         if actual_port:
             ports[actual_port] = process_name
@@ -853,14 +866,31 @@ def _discover_cdp_endpoint() -> str:
         ports.setdefault(port, "")
 
     found = []
-    for port, process_name in ports.items():
-        candidate = _probe_cdp_port(port, process_name)
-        if candidate is not None:
-            found.append(candidate)
+    with concurrent.futures.ThreadPoolExecutor(
+        max_workers=min(8, max(1, len(ports)))
+    ) as executor:
+        futures = [
+            executor.submit(_probe_cdp_port, port, process_name)
+            for port, process_name in ports.items()
+        ]
+        for future in concurrent.futures.as_completed(futures):
+            candidate = future.result()
+            if candidate is not None:
+                found.append(candidate)
     if not found:
+        chrome_running = any(
+            str(process.get("Name") or "").lower()
+            in {"chrome.exe", "msedge.exe", "chromium.exe"}
+            and "--type=" not in str(process.get("CommandLine") or "")
+            for process in processes
+        )
+        if chrome_running:
+            raise RuntimeError(
+                "检测到普通 Chrome 正在运行，但没有发现 RPA 专用 CDP 浏览器。"
+                "请先执行“步骤2-启动Chrome-CDP.py”；首次启动后在新浏览器中登录淘宝。"
+            )
         raise RuntimeError(
-            "没有发现可连接的已打开 Chrome。浏览器必须在启动时开启远程调试；"
-            "推荐使用 --remote-debugging-port=0，让 Chrome 自动选择端口。"
+            "没有发现可连接的 Chrome。请先执行“步骤2-启动Chrome-CDP.py”。"
         )
 
     found.sort(key=lambda item: (item["score"], -item["port"]), reverse=True)

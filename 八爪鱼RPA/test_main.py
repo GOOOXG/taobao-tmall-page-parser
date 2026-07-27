@@ -1,6 +1,7 @@
 import importlib.util
 import inspect
 import pathlib
+import tempfile
 import unittest
 
 MODULE_PATH = pathlib.Path(__file__).with_name("main.py")
@@ -10,7 +11,74 @@ assert SPEC.loader is not None
 SPEC.loader.exec_module(MODULE)
 
 
+def load_sibling(filename, module_name):
+    path = pathlib.Path(__file__).with_name(filename)
+    spec = importlib.util.spec_from_file_location(module_name, path)
+    module = importlib.util.module_from_spec(spec)
+    assert spec.loader is not None
+    spec.loader.exec_module(module)
+    return module
+
+
+CHECK_MODULE = load_sibling("步骤1-检查CDP.py", "octopus_rpa_check_cdp")
+START_MODULE = load_sibling("步骤2-启动Chrome-CDP.py", "octopus_rpa_start_chrome")
+
+
 class RpaParserTests(unittest.TestCase):
+    def test_step_functions_have_no_input_and_return_booleans(self):
+        self.assertEqual(list(inspect.signature(CHECK_MODULE.main).parameters), [])
+        self.assertEqual(list(inspect.signature(START_MODULE.main).parameters), [])
+
+        original_check = CHECK_MODULE._cdp_endpoint
+        original_start = START_MODULE._cdp_endpoint
+        original_open = START_MODULE._open_taobao
+        try:
+            CHECK_MODULE._cdp_endpoint = lambda: "http://127.0.0.1:12345"
+            self.assertIs(CHECK_MODULE.main(), True)
+            CHECK_MODULE._cdp_endpoint = lambda: None
+            self.assertIs(CHECK_MODULE.main(), False)
+
+            opened = []
+            START_MODULE._cdp_endpoint = lambda: "http://127.0.0.1:12345"
+            START_MODULE._open_taobao = opened.append
+            self.assertIs(START_MODULE.main(), True)
+            self.assertEqual(opened, ["http://127.0.0.1:12345"])
+        finally:
+            CHECK_MODULE._cdp_endpoint = original_check
+            START_MODULE._cdp_endpoint = original_start
+            START_MODULE._open_taobao = original_open
+
+    def test_start_step_uses_dynamic_cdp_profile_and_taobao_url(self):
+        calls = []
+        endpoint_results = iter([None, "http://127.0.0.1:23456"])
+        original_endpoint = START_MODULE._cdp_endpoint
+        original_find = START_MODULE._find_chrome
+        original_popen = START_MODULE.subprocess.Popen
+        original_profile = START_MODULE.os.environ.get("TAOBAO_RPA_PROFILE")
+        try:
+            with tempfile.TemporaryDirectory() as profile:
+                START_MODULE.os.environ["TAOBAO_RPA_PROFILE"] = profile
+                START_MODULE._cdp_endpoint = lambda: next(endpoint_results)
+                START_MODULE._find_chrome = lambda: r"C:\Chrome\chrome.exe"
+                START_MODULE.subprocess.Popen = (
+                    lambda args, **kwargs: calls.append((args, kwargs))
+                )
+                self.assertIs(START_MODULE.main(), True)
+        finally:
+            START_MODULE._cdp_endpoint = original_endpoint
+            START_MODULE._find_chrome = original_find
+            START_MODULE.subprocess.Popen = original_popen
+            if original_profile is None:
+                START_MODULE.os.environ.pop("TAOBAO_RPA_PROFILE", None)
+            else:
+                START_MODULE.os.environ["TAOBAO_RPA_PROFILE"] = original_profile
+
+        args = calls[0][0]
+        self.assertIn("--remote-debugging-port=0", args)
+        self.assertIn("--remote-debugging-address=127.0.0.1", args)
+        self.assertIn("https://www.taobao.com/", args)
+        self.assertTrue(any(value.startswith("--user-data-dir=") for value in args))
+
     def test_rpa_entry_is_main_with_item_id_parameter(self):
         self.assertEqual(list(inspect.signature(MODULE.main).parameters), ["itemId"])
 
