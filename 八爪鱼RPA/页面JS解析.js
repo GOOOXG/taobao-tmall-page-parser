@@ -250,8 +250,6 @@ function executeScript() {
       };
       if (media.video.videoUrl) media.video.videoUrl = media.video.videoUrl.replace(/^http:/, "https:");
     }
-    if (images.length) media.mainImages = images;
-
     var props = asArray(getPath(response, ["skuBase", "props"]));
     var valueMap = {};
     props.forEach(function (property) {
@@ -323,6 +321,7 @@ function executeScript() {
         itemId: Number(item.itemId),
         title: item.title || null,
         itemPic: images[0] || null,
+        images: images,
         media: media
       },
       skuInfo: {

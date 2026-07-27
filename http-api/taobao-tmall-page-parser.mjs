@@ -58,8 +58,6 @@ export async function parseCorePageData(page) {
         videoUrl: normalizeUrl(firstVideo.url)?.replace(/^http:/, "https:"),
       };
     }
-    if (images.length > 0) media.mainImages = images;
-
     const props = response.skuBase?.props || [];
     const valueMap = new Map();
     for (const property of props) {
@@ -125,6 +123,7 @@ export async function parseCorePageData(page) {
       spuInfo: {
         itemId: Number(item.itemId),
         title: item.title,
+        images,
         media,
       },
       skuInfo: { properties, items, quantityInfo },

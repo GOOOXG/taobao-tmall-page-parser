@@ -20,10 +20,10 @@ import {
 shopInfo -> spuInfo -> skuInfo -> detailPageInfo
 ```
 
-媒体顺序：
+媒体字段：
 
 ```text
-videoCover -> video -> mainImages
+spuInfo.images -> spuInfo.media.videoCover -> spuInfo.media.video
 ```
 
 视频、参数、尺码、工业文档等可选模块不存在时不会输出空模块。

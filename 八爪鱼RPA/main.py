@@ -75,8 +75,6 @@ CORE_SCRIPT = r"""() => {
         videoUrl: normalizeUrl(firstVideo.url)?.replace(/^http:/, "https:"),
       };
     }
-    if (images.length > 0) media.mainImages = images;
-
     const props = response.skuBase?.props || [];
     const valueMap = new Map();
     for (const property of props) {
@@ -142,6 +140,7 @@ CORE_SCRIPT = r"""() => {
       spuInfo: {
         itemId: Number(item.itemId),
         title: item.title,
+        images,
         media,
       },
       skuInfo: { properties, items, quantityInfo },

@@ -73,8 +73,8 @@ test("returns a non-empty JSON string with the required data order", () => {
   assert.equal(result.code, 0);
   assert.deepEqual(Object.keys(result.data), ["shopInfo", "spuInfo", "skuInfo", "detailPageInfo"]);
   assert.equal(result.data.spuInfo.itemId, 901024796701);
-  assert.equal("images" in result.data.spuInfo, false);
-  assert.deepEqual(result.data.spuInfo.media.mainImages, ["https://img.example/main.jpg"]);
+  assert.deepEqual(result.data.spuInfo.images, ["https://img.example/main.jpg"]);
+  assert.equal("mainImages" in result.data.spuInfo.media, false);
   assert.equal(result.data.skuInfo.items[0].skuId, "3");
   assert.equal(result.data.skuInfo.items[0].finalSkuPrice, 47.5);
   assert.equal(result.data.skuInfo.items[0].itemPrice, 59.9);
