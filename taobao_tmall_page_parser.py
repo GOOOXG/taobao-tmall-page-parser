@@ -475,6 +475,13 @@ def parse_item_id(item_id: str, cdp_url: str = DEFAULT_CDP_URL) -> dict:
                         "() => Boolean(window.__ICE_APP_CONTEXT__?.loaderData?.home?.data?.res)",
                         timeout=120_000,
                     )
+                    runtime_item_id = page.evaluate(
+                        "() => window.__ICE_APP_CONTEXT__.loaderData.home.data.res.item.itemId"
+                    )
+                    if str(runtime_item_id) != item_id:
+                        raise RuntimeError(
+                            f"页面商品 ID {runtime_item_id} 与输入 ID {item_id} 不一致"
+                        )
                     break
                 except Exception as error:
                     errors.append(str(error))
