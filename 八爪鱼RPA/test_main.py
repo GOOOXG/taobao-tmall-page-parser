@@ -133,7 +133,10 @@ class RpaParserTests(unittest.TestCase):
                 START_MODULE._find_chrome = lambda: None
                 START_MODULE._error_file = lambda: error_file
                 self.assertIs(START_MODULE.main(), False)
-                self.assertIn("Chrome was not found", START_MODULE.getLastError())
+                self.assertIn(
+                    "Chrome was not found",
+                    error_file.read_text(encoding="utf-8"),
+                )
         finally:
             START_MODULE._cdp_endpoint = original_endpoint
             START_MODULE._find_chrome = original_find

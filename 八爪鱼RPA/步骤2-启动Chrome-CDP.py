@@ -93,14 +93,6 @@ def _record_error(message):
         pass
 
 
-def getLastError():
-    """读取最近一次启动失败原因；没有错误时返回空字符串。"""
-    try:
-        return _error_file().read_text(encoding="utf-8")
-    except Exception:
-        return ""
-
-
 def _open_taobao(endpoint):
     query = urllib.parse.quote(TAOBAO_URL, safe="")
     request = urllib.request.Request(endpoint + "/json/new?" + query, method="PUT")
