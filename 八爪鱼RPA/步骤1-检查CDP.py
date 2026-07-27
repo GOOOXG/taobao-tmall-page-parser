@@ -1,6 +1,7 @@
 import json
 import os
 import pathlib
+import urllib.parse
 import urllib.request
 
 
@@ -28,6 +29,33 @@ def _cdp_endpoint():
         return None
 
 
+def _verify_with_temporary_tab(endpoint):
+    target_id = None
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+    try:
+        url = endpoint + "/json/new?" + urllib.parse.quote("about:blank", safe="")
+        request = urllib.request.Request(url, method="PUT")
+        with opener.open(request, timeout=5) as response:
+            target = json.loads(response.read().decode("utf-8"))
+        target_id = target.get("id")
+        return bool(target_id)
+    except Exception:
+        return False
+    finally:
+        if target_id:
+            try:
+                close_url = endpoint + "/json/close/" + urllib.parse.quote(
+                    target_id, safe=""
+                )
+                with opener.open(close_url, timeout=5):
+                    pass
+            except Exception:
+                pass
+
+
 def main():
-    """CDP 已开启返回 True，否则返回 False。"""
-    return _cdp_endpoint() is not None
+    """创建临时标签页检查 CDP，关闭该标签页后返回布尔值。"""
+    endpoint = _cdp_endpoint()
+    if endpoint is None:
+        return False
+    return _verify_with_temporary_tab(endpoint)

@@ -25,15 +25,57 @@ START_MODULE = load_sibling("步骤2-启动Chrome-CDP.py", "octopus_rpa_start_ch
 
 
 class RpaParserTests(unittest.TestCase):
+    def test_cdp_check_closes_the_exact_temporary_target(self):
+        calls = []
+
+        class FakeResponse:
+            def __init__(self, body=b"{}"):
+                self.body = body
+
+            def __enter__(self):
+                return self
+
+            def __exit__(self, exc_type, exc_value, traceback):
+                return False
+
+            def read(self):
+                return self.body
+
+        class FakeOpener:
+            def open(self, request, timeout):
+                url = request.full_url if hasattr(request, "full_url") else request
+                calls.append(url)
+                if "/json/new?" in url:
+                    return FakeResponse(b'{"id":"temporary-target-123"}')
+                return FakeResponse()
+
+        original_builder = CHECK_MODULE.urllib.request.build_opener
+        try:
+            CHECK_MODULE.urllib.request.build_opener = lambda *handlers: FakeOpener()
+            result = CHECK_MODULE._verify_with_temporary_tab(
+                "http://127.0.0.1:9222"
+            )
+        finally:
+            CHECK_MODULE.urllib.request.build_opener = original_builder
+
+        self.assertIs(result, True)
+        self.assertTrue(any("/json/new?about%3Ablank" in url for url in calls))
+        self.assertIn(
+            "http://127.0.0.1:9222/json/close/temporary-target-123",
+            calls,
+        )
+
     def test_step_functions_have_no_input_and_return_booleans(self):
         self.assertEqual(list(inspect.signature(CHECK_MODULE.main).parameters), [])
         self.assertEqual(list(inspect.signature(START_MODULE.main).parameters), [])
 
         original_check = CHECK_MODULE._cdp_endpoint
+        original_verify = CHECK_MODULE._verify_with_temporary_tab
         original_start = START_MODULE._cdp_endpoint
         original_open = START_MODULE._open_taobao
         try:
             CHECK_MODULE._cdp_endpoint = lambda: "http://127.0.0.1:12345"
+            CHECK_MODULE._verify_with_temporary_tab = lambda endpoint: True
             self.assertIs(CHECK_MODULE.main(), True)
             CHECK_MODULE._cdp_endpoint = lambda: None
             self.assertIs(CHECK_MODULE.main(), False)
@@ -45,6 +87,7 @@ class RpaParserTests(unittest.TestCase):
             self.assertEqual(opened, ["http://127.0.0.1:12345"])
         finally:
             CHECK_MODULE._cdp_endpoint = original_check
+            CHECK_MODULE._verify_with_temporary_tab = original_verify
             START_MODULE._cdp_endpoint = original_start
             START_MODULE._open_taobao = original_open
 
