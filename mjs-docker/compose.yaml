@@ -1,0 +1,27 @@
+name: taobao-tmall-parser
+
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: mjs-docker/Dockerfile
+    image: taobao-tmall-parser:1.0.0
+    init: true
+    restart: unless-stopped
+    environment:
+      PARSER_BROWSER_MODE: managed
+      PARSER_CHROME_PROFILE_DIR: /data/chrome-profile
+      PARSER_HEADLESS: "true"
+      PARSER_HOST: 0.0.0.0
+      PARSER_PORT: 3210
+    ports:
+      - "127.0.0.1:${HOST_PORT:-3210}:3210"
+    volumes:
+      - taobao-profile:/data/chrome-profile
+    shm_size: "1gb"
+    security_opt:
+      - seccomp=./seccomp_profile.json
+
+volumes:
+  taobao-profile:
+    name: taobao-tmall-parser-profile

@@ -1,0 +1,4 @@
+.env
+*.png
+item-*.json
+profile-backup-*.tar.gz

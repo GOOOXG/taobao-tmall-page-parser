@@ -1,0 +1,23 @@
+[Unit]
+Description=Taobao and Tmall parser HTTP API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=taobao-parser
+Group=taobao-parser
+WorkingDirectory=/opt/taobao-tmall-page-parser/http-api
+Environment=NODE_ENV=production
+Environment=PARSER_BROWSER_MODE=managed
+Environment=PARSER_CHROME_PROFILE_DIR=/var/lib/taobao-parser/chrome-profile
+Environment=PARSER_HEADLESS=true
+Environment=PARSER_HOST=127.0.0.1
+Environment=PARSER_PORT=3210
+ExecStart=/usr/bin/node server.mjs
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target
