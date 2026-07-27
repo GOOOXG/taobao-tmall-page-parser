@@ -1,10 +1,18 @@
 import json
 import os
 import pathlib
+import shutil
 import subprocess
+import tempfile
 import time
+import traceback
 import urllib.parse
 import urllib.request
+
+try:
+    import winreg
+except ImportError:
+    winreg = None
 
 
 TAOBAO_URL = "https://www.taobao.com/"
@@ -34,6 +42,7 @@ def _cdp_endpoint():
 
 def _find_chrome():
     roots = (
+        os.environ.get("ProgramW6432"),
         os.environ.get("ProgramFiles"),
         os.environ.get("ProgramFiles(x86)"),
         os.environ.get("LOCALAPPDATA"),
@@ -44,7 +53,52 @@ def _find_chrome():
         candidate = pathlib.Path(root) / "Google" / "Chrome" / "Application" / "chrome.exe"
         if candidate.is_file():
             return str(candidate)
+
+    path_chrome = shutil.which("chrome.exe") or shutil.which("chrome")
+    if path_chrome:
+        return path_chrome
+
+    if winreg is not None:
+        registry_locations = (
+            (winreg.HKEY_CURRENT_USER, r"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe"),
+            (winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe"),
+            (winreg.HKEY_LOCAL_MACHINE, r"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe"),
+        )
+        for root, key_path in registry_locations:
+            try:
+                with winreg.OpenKey(root, key_path) as key:
+                    candidate = winreg.QueryValue(key, None)
+                if candidate and pathlib.Path(candidate).is_file():
+                    return candidate
+            except OSError:
+                pass
     return None
+
+
+def _error_file():
+    return pathlib.Path(tempfile.gettempdir()) / "taobao-rpa-cdp-start-error.txt"
+
+
+def _clear_error():
+    try:
+        _error_file().unlink()
+    except FileNotFoundError:
+        pass
+
+
+def _record_error(message):
+    try:
+        _error_file().write_text(str(message), encoding="utf-8")
+    except Exception:
+        pass
+
+
+def getLastError():
+    """读取最近一次启动失败原因；没有错误时返回空字符串。"""
+    try:
+        return _error_file().read_text(encoding="utf-8")
+    except Exception:
+        return ""
 
 
 def _open_taobao(endpoint):
@@ -57,6 +111,7 @@ def _open_taobao(endpoint):
 
 def main():
     """启动带动态 CDP 的 Chrome 并打开淘宝，成功返回 True。"""
+    _clear_error()
     try:
         endpoint = _cdp_endpoint()
         if endpoint:
@@ -65,7 +120,7 @@ def main():
 
         chrome = _find_chrome()
         if not chrome:
-            return False
+            raise RuntimeError("Google Chrome was not found on this computer.")
 
         profile = _profile_dir()
         profile.mkdir(parents=True, exist_ok=True)
@@ -81,7 +136,7 @@ def main():
                 getattr(subprocess, "DETACHED_PROCESS", 0)
                 | getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
             )
-        subprocess.Popen(
+        process = subprocess.Popen(
             [
                 chrome,
                 "--remote-debugging-port=0",
@@ -100,6 +155,14 @@ def main():
             if _cdp_endpoint():
                 return True
             time.sleep(0.25)
-        return False
-    except Exception:
+        raise RuntimeError(
+            "Chrome started but CDP was not ready within 20 seconds. "
+            "chrome={0}; profile={1}; exitCode={2}".format(
+                chrome, profile, process.poll()
+            )
+        )
+    except Exception as error:
+        detail = "{0}\n\n{1}".format(error, traceback.format_exc())
+        _record_error(detail)
+        print("Chrome CDP start failed: {0}".format(error))
         return False
