@@ -472,13 +472,6 @@ function executeScript() {
 
   function parseDetailPageData(response) {
     var result = {};
-    var tabs = asArray(getPath(response, ["componentsVO", "tabVO", "tabList"])).slice().sort(function (a, b) {
-      return Number(a.sort || 0) - Number(b.sort || 0);
-    }).map(function (tab) {
-      return { name: tab.name, title: tab.title };
-    });
-    if (tabs.length) result.sectionOrder = tabs;
-
     var rate = getPath(response, ["componentsVO", "rateVO"]);
     if (rate) {
       var reviewInfo = {};

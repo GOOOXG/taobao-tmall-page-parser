@@ -42,6 +42,12 @@ test("returns a non-empty JSON string with the required data order", () => {
       },
     },
     componentsVO: {
+      tabVO: {
+        tabList: [
+          { name: "DETAIL", title: "图文详情", sort: 2 },
+          { name: "RATE", title: "商品评价", sort: 1 },
+        ],
+      },
       rateVO: {
         totalCount: "100+",
         favorableRate: { rateText: "好评率99%" },
@@ -73,6 +79,7 @@ test("returns a non-empty JSON string with the required data order", () => {
   assert.equal(result.data.spuInfo.priceInfo.currentPrice.amount, 47.5);
   assert.equal(result.data.spuInfo.priceInfo.originalPrice.amount, 59.9);
   assert.equal(result.data.spuInfo.couponInfo.items[0].discountAmount, 10.2);
+  assert.equal("sectionOrder" in result.data.detailPageInfo, false);
   assert.equal(result.data.detailPageInfo.reviewInfo.totalCount, "100+");
   assert.equal("keywords" in result.data.detailPageInfo.reviewInfo, false);
   assert.equal("samples" in result.data.detailPageInfo.reviewInfo, false);

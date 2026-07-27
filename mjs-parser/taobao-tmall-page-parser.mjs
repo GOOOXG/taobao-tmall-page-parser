@@ -319,12 +319,6 @@ export async function parseDetailPageData(page) {
       url?.startsWith("//") ? `https:${url}` : url || null;
     const result = {};
 
-    const tabs = (response.componentsVO?.tabVO?.tabList || [])
-      .slice()
-      .sort((a, b) => Number(a.sort || 0) - Number(b.sort || 0))
-      .map((tab) => ({ name: tab.name, title: tab.title }));
-    if (tabs.length > 0) result.sectionOrder = tabs;
-
     const rate = response.componentsVO?.rateVO;
     if (rate) {
       const reviewInfo = {
