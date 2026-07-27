@@ -1,7 +1,7 @@
 import http from "node:http";
 import { pathToFileURL } from "node:url";
 
-import { parseTaobaoTmallPage } from "./taobao-tmall-page-parser.mjs";
+import { parseTaobaoTmallPage } from "../mjs-parser/taobao-tmall-page-parser.mjs";
 
 const DEFAULT_HOST = "127.0.0.1";
 const DEFAULT_PORT = 3210;
