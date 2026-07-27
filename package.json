@@ -1,0 +1,16 @@
+{
+  "name": "taobao-tmall-parser-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "check": "node --check server.mjs && node --check taobao-tmall-page-parser.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.40.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
