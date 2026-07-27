@@ -5,10 +5,11 @@
   "type": "module",
   "scripts": {
     "start": "node server.mjs",
-    "check": "node --check server.mjs && node --check taobao-tmall-page-parser.mjs"
+    "check": "node --check server.mjs && node --check api-error.mjs && node --check browser-session.mjs && node --check runtime-config.mjs && node --check taobao-tmall-page-parser.mjs",
+    "test": "node --test"
   },
   "dependencies": {
-    "playwright": "^1.40.0"
+    "playwright": "1.62.0"
   },
   "engines": {
     "node": ">=20"

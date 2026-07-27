@@ -1,21 +1,21 @@
 import http from "node:http";
 import { pathToFileURL } from "node:url";
 
+import { ApiError } from "./api-error.mjs";
+import { createBrowserSession } from "./browser-session.mjs";
+import { loadRuntimeConfig } from "./runtime-config.mjs";
 import { parseTaobaoTmallPage } from "./taobao-tmall-page-parser.mjs";
 
-const DEFAULT_HOST = "127.0.0.1";
-const DEFAULT_PORT = 3210;
-const DEFAULT_CDP_URL = "http://127.0.0.1:9224";
 const MAX_BODY_BYTES = 16 * 1024;
 const ITEM_ID_PATTERN = /^\d{6,20}$/;
-const API_TOKEN = process.env.PARSER_API_TOKEN?.trim() || null;
-
-class ApiError extends Error {
-  constructor(statusCode, message) {
-    super(message);
-    this.statusCode = statusCode;
-  }
-}
+const ROUTES = new Map([
+  ["/health", "GET"],
+  ["/parse", "POST"],
+  ["/login", "GET"],
+  ["/login/status", "GET"],
+  ["/login/qrcode", "GET"],
+  ["/logout", "POST"],
+]);
 
 export function parseItemIdFromBody(body) {
   const itemId = String(body?.itemId ?? "").trim();
@@ -34,6 +34,15 @@ export function serializeError(error) {
   };
 }
 
+function createSuccess(data) {
+  return {
+    code: 0,
+    message: null,
+    data,
+    recordTime: new Date().toISOString(),
+  };
+}
+
 function sendJson(response, statusCode, body) {
   const payload = JSON.stringify(body);
   response.writeHead(statusCode, {
@@ -45,16 +54,98 @@ function sendJson(response, statusCode, body) {
   response.end(payload);
 }
 
-function assertApiToken(request) {
-  if (!API_TOKEN) return;
-  const authorization = request.headers.authorization || "";
-  const bearerToken = authorization.startsWith("Bearer ")
-    ? authorization.slice("Bearer ".length).trim()
-    : "";
-  const headerToken = request.headers["x-parser-token"] || "";
-  if (bearerToken !== API_TOKEN && headerToken !== API_TOKEN) {
-    throw new ApiError(401, "需要有效的 API Token");
-  }
+function sendPng(response, screenshot) {
+  response.writeHead(200, {
+    "Content-Type": "image/png",
+    "Content-Length": screenshot.buffer.length,
+    "Cache-Control": "no-store",
+    "X-Content-Type-Options": "nosniff",
+    "X-Parser-Screenshot": screenshot.kind,
+  });
+  response.end(screenshot.buffer);
+}
+
+function sendHtml(response, html) {
+  const payload = Buffer.from(html);
+  response.writeHead(200, {
+    "Content-Type": "text/html; charset=utf-8",
+    "Content-Length": payload.length,
+    "Cache-Control": "no-store",
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "no-referrer",
+    "X-Frame-Options": "DENY",
+    "Content-Security-Policy":
+      "default-src 'self'; img-src 'self'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; frame-ancestors 'none'; base-uri 'none'",
+  });
+  response.end(payload);
+}
+
+function renderLoginPage(status) {
+  const authenticated = status.state === "authenticated";
+  const initialText = authenticated ? "账号已登录" : "等待扫码";
+  const qrMarkup = authenticated
+    ? ""
+    : '<div class="qr"><img id="qr" src="/login/qrcode" alt="淘宝登录二维码"></div><button id="refresh" type="button">刷新二维码</button>';
+
+  return `<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>淘宝账号登录</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #f4f5f6; color: #17191c; font-family: Arial, "Microsoft YaHei", sans-serif; }
+    main { width: min(92vw, 420px); padding: 40px 24px; text-align: center; }
+    h1 { margin: 0 0 10px; font-size: 28px; letter-spacing: 0; }
+    p { margin: 0 0 24px; color: #61656b; line-height: 1.6; }
+    #status { display: inline-flex; align-items: center; min-height: 32px; margin-bottom: 18px; padding: 5px 12px; border: 1px solid #d9dcdf; border-radius: 6px; background: #fff; font-size: 14px; }
+    #status.authenticated { border-color: #88b393; color: #17632b; }
+    .qr { width: min(320px, 82vw); aspect-ratio: 1; margin: 0 auto 18px; display: grid; place-items: center; overflow: hidden; border: 1px solid #d9dcdf; border-radius: 8px; background: #fff; }
+    .qr img { display: block; width: 100%; height: 100%; object-fit: contain; }
+    button { min-height: 40px; padding: 8px 16px; border: 1px solid #b7bbc0; border-radius: 6px; background: #fff; color: #17191c; cursor: pointer; font-size: 14px; }
+    button:hover { background: #eceef0; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>淘宝账号登录</h1>
+    <p>使用手机淘宝扫描二维码。登录状态将保存在当前服务器。</p>
+    <div id="status" class="${authenticated ? "authenticated" : ""}">${initialText}</div>
+    <div id="login-area">${qrMarkup}</div>
+  </main>
+  <script>
+    const statusElement = document.getElementById("status");
+    const loginArea = document.getElementById("login-area");
+    const refreshButton = document.getElementById("refresh");
+    const qrImage = document.getElementById("qr");
+
+    function refreshQr() {
+      if (qrImage) qrImage.src = "/login/qrcode?t=" + Date.now();
+    }
+
+    async function checkStatus() {
+      try {
+        const response = await fetch("/login/status", { cache: "no-store" });
+        const result = await response.json();
+        if (result.data?.state === "authenticated") {
+          statusElement.textContent = "登录成功，账号状态已持久化";
+          statusElement.classList.add("authenticated");
+          loginArea.hidden = true;
+          return;
+        }
+        statusElement.textContent = "等待扫码";
+      } catch {
+        statusElement.textContent = "状态检查失败，请刷新页面";
+      }
+      setTimeout(checkStatus, 2000);
+    }
+
+    refreshButton?.addEventListener("click", refreshQr);
+    if (${authenticated ? "false" : "true"}) checkStatus();
+  </script>
+</body>
+</html>`;
 }
 
 async function readJsonBody(request) {
@@ -75,30 +166,11 @@ async function readJsonBody(request) {
   }
 
   try {
-    return JSON.parse(Buffer.concat(chunks).toString("utf8"));
+    const text = Buffer.concat(chunks).toString("utf8").replace(/^\uFEFF/, "");
+    return JSON.parse(text);
   } catch {
     throw new ApiError(400, "请求体不是有效 JSON");
   }
-}
-
-let browserPromise = null;
-
-async function getBrowser(cdpUrl) {
-  if (!browserPromise) {
-    browserPromise = import("playwright")
-      .then(({ chromium }) => chromium.connectOverCDP(cdpUrl))
-      .then((browser) => {
-        browser.on("disconnected", () => {
-          browserPromise = null;
-        });
-        return browser;
-      })
-      .catch((error) => {
-        browserPromise = null;
-        throw new ApiError(503, `无法连接已登录的 Chrome：${error.message}`);
-      });
-  }
-  return browserPromise;
 }
 
 async function loadItemPage(page, itemId) {
@@ -131,7 +203,10 @@ async function loadItemPage(page, itemId) {
     }
   }
 
-  throw new ApiError(502, `商品页面加载失败：${errors.at(-1) || "没有读取到商品数据"}`);
+  throw new ApiError(
+    502,
+    `商品页面加载失败：${errors.at(-1) || "没有读取到商品数据"}`,
+  );
 }
 
 async function loadLazyDetails(page) {
@@ -149,16 +224,8 @@ async function loadLazyDetails(page) {
   await page.waitForTimeout(2_000);
 }
 
-export async function parseItemById(
-  itemId,
-  { cdpUrl = DEFAULT_CDP_URL } = {},
-) {
-  const browser = await getBrowser(cdpUrl);
-  const context = browser.contexts()[0];
-  if (!context) {
-    throw new ApiError(503, "没有找到可用的 Chrome 浏览器上下文");
-  }
-
+export async function parseItemById(itemId, { browserSession }) {
+  const context = await browserSession.getContext();
   const page = await context.newPage();
   try {
     await loadItemPage(page, itemId);
@@ -170,9 +237,17 @@ export async function parseItemById(
 }
 
 export function createParserServer({
-  parseItem = parseItemById,
-  cdpUrl = DEFAULT_CDP_URL,
+  parseItem,
+  browserSession,
+  browserMode = "cdp",
 } = {}) {
+  const session =
+    browserSession ||
+    createBrowserSession({
+      mode: "cdp",
+      cdpUrl: "http://127.0.0.1:9224",
+    });
+  const parse = parseItem || ((itemId) => parseItemById(itemId, { browserSession: session }));
   let queue = Promise.resolve();
   const enqueue = (task) => {
     const result = queue.then(task, task);
@@ -180,49 +255,103 @@ export function createParserServer({
     return result;
   };
 
-  return http.createServer(async (request, response) => {
+  const server = http.createServer(async (request, response) => {
     const url = new URL(request.url || "/", "http://localhost");
+    const expectedMethod = ROUTES.get(url.pathname);
 
-    if (request.method === "GET" && url.pathname === "/health") {
-      sendJson(response, 200, { status: "ok", service: "taobao-tmall-parser" });
-      return;
-    }
-
-    if (url.pathname === "/parse" && request.method !== "POST") {
-      sendJson(response, 405, serializeError(new Error("仅支持 POST /parse")));
-      return;
-    }
-
-    if (request.method !== "POST" || url.pathname !== "/parse") {
+    if (!expectedMethod) {
       sendJson(response, 404, serializeError(new Error("接口不存在")));
+      return;
+    }
+    if (request.method !== expectedMethod) {
+      sendJson(
+        response,
+        405,
+        serializeError(new Error(`仅支持 ${expectedMethod} ${url.pathname}`)),
+      );
       return;
     }
 
     try {
-      assertApiToken(request);
-      const itemId = parseItemIdFromBody(await readJsonBody(request));
-      const result = await enqueue(() => parseItem(itemId, { cdpUrl }));
-      sendJson(response, 200, result);
+      if (url.pathname === "/health") {
+        sendJson(response, 200, {
+          status: "ok",
+          service: "taobao-tmall-parser",
+          browserMode,
+        });
+        return;
+      }
+
+      if (url.pathname === "/parse") {
+        const itemId = parseItemIdFromBody(await readJsonBody(request));
+        const result = await enqueue(() => parse(itemId));
+        sendJson(response, 200, result);
+        return;
+      }
+
+      if (url.pathname === "/login") {
+        const login = await enqueue(() => session.startLogin());
+        sendHtml(response, renderLoginPage(login));
+        return;
+      }
+
+      if (url.pathname === "/login/status") {
+        const status = await enqueue(() => session.getAccountStatus());
+        sendJson(response, 200, createSuccess(status));
+        return;
+      }
+
+      if (url.pathname === "/login/qrcode") {
+        sendPng(response, await session.getLoginScreenshot());
+        return;
+      }
+
+      const logout = await enqueue(() => session.logout());
+      sendJson(response, 200, createSuccess(logout));
     } catch (error) {
       const statusCode = error instanceof ApiError ? error.statusCode : 500;
       sendJson(response, statusCode, serializeError(error));
     }
   });
+
+  server.browserSession = session;
+  return server;
 }
 
-export function startServer({
-  host = process.env.PARSER_HOST || DEFAULT_HOST,
-  port = Number(process.env.PARSER_PORT || DEFAULT_PORT),
-  cdpUrl = process.env.TAOBAO_CDP_URL || DEFAULT_CDP_URL,
-} = {}) {
-  const server = createParserServer({ cdpUrl });
-  server.listen(port, host, () => {
-    console.log(`Taobao/Tmall parser API: http://${host}:${port}`);
-    console.log(`Chrome CDP: ${cdpUrl}`);
+export function startServer(config = loadRuntimeConfig()) {
+  const browserSession = createBrowserSession(config.browser);
+  const server = createParserServer({
+    browserSession,
+    browserMode: config.browser.mode,
+  });
+
+  server.listen(config.port, config.host, () => {
+    console.log(`Taobao/Tmall parser API: http://${config.host}:${config.port}`);
+    console.log(`Browser mode: ${config.browser.mode}`);
+    if (config.browser.mode === "managed") {
+      console.log(`Chrome profile: ${config.browser.profileDir}`);
+      console.log(`Chrome headless: ${config.browser.headless}`);
+    } else {
+      console.log(`Chrome CDP: ${config.browser.cdpUrl}`);
+    }
   });
   return server;
 }
 
+async function shutdown(server) {
+  await new Promise((resolve) => server.close(resolve));
+  await server.browserSession.close();
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  startServer();
+  const server = startServer();
+  let stopping = false;
+  for (const signal of ["SIGINT", "SIGTERM"]) {
+    process.once(signal, async () => {
+      if (stopping) return;
+      stopping = true;
+      await shutdown(server);
+      process.exit(0);
+    });
+  }
 }
